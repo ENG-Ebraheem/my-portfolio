@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ebraheem Al-moqbily | Senior IT Student & Full-Stack Developer</title>
+  
+  <meta name="description" content="Personal portfolio and blogfolio of Ebraheem Al-moqbily, a 4th-year Information Technology (IT) student and software developer specializing in modern web applications, cloud infrastructure, and robust systems.">
+  <meta name="author" content="Ebraheem Al-moqbily">
+  
+  <!-- OpenGraph / Social Metadata -->
+  <meta property="og:title" content="Ebraheem Al-moqbily | Portfolio & Blogfolio">
+  <meta property="og:description" content="Senior Information Technology student crafting modern web platforms, backend architectures, and IT infrastructure.">
+  <meta property="og:image" content="assets/images/ebraheem.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%236366f1'/><text x='50%' y='55%' text-anchor='middle' fill='white' font-family='sans-serif' font-size='42' font-weight='bold' dy='.3em'>EA</text></svg>">
+
+  <!-- Fonts: Geist / Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       Floating Pill Navigation Bar (Braydon Coyer Signature Design)
+       ========================================================================= -->
+  <div class="nav-wrapper">
+    <nav class="navbar">
+      <a href="#hero" class="nav-brand">
+        <img src="assets/images/ebraheem.jpg" alt="Ebraheem Al-moqbily" class="brand-avatar">
+        <span>Ebraheem</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#bento" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#timeline" class="nav-link">Experience</a></li>
+        <li><a href="#articles" class="nav-link">Articles</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Sound FX Toggle Button -->
+        <button id="sound-toggle-btn" class="icon-btn" aria-label="Toggle Sound Effects" title="Sound Effects">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+        </button>
+
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle-btn" class="icon-btn" aria-label="Toggle Theme" title="Switch Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <!-- Quick Resume Download Pill -->
+        <a href="#contact" class="badge-pill" style="display: none; @media(min-width: 640px){display:inline-flex;}">
+          <span class="status-dot"></span>
+          <span>Hire Me</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="icon-btn mobile-menu-btn" aria-label="Open Navigation">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Mobile Dropdown Drawer -->
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+    <a href="#hero" class="nav-link">Home</a>
+    <a href="#bento" class="nav-link">About & Bento</a>
+    <a href="#projects" class="nav-link">Featured Projects</a>
+    <a href="#skills" class="nav-link">Skills & Toolbox</a>
+    <a href="#timeline" class="nav-link">Experience & Education</a>
+    <a href="#articles" class="nav-link">Articles & Insights</a>
+    <a href="#contact" class="nav-link">Get in Touch</a>
+  </div>
+
+  <!-- =========================================================================
+       Hero Section & Interactive Photo Fan-Out
+       ========================================================================= -->
+  <section id="hero" class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="badge-pill">
+            <span class="status-dot"></span>
+            <span>Senior IT Student • Available for Software & IT Roles</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hey, I'm <span class="gradient-text">Ebraheem Al-moqbily</span>.
+          </h1>
+
+          <p class="hero-description">
+            I am a 4th-level Information Technology (IT) student and software developer. I specialize in building modern, performant web applications, designing scalable databases, and managing robust IT and cloud infrastructure.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary">
+              <span>View Selected Work</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#contact" class="btn-secondary">
+              <span>Let's Talk</span>
+            </a>
+            <button id="copy-email-btn" class="btn-secondary" title="Copy email address">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span>Copy Email</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Interactive Photo Fan-Out Stack -->
+        <div class="photo-stack-container" title="Click or hover to fan out photos!">
+          <!-- Background Left Card -->
+          <div class="photo-card card-back-left">
+            <div style="font-size: 0.8rem; font-family: var(--font-mono); opacity: 0.85;">CORE DISCIPLINE</div>
+            <div style="font-size: 1.15rem; font-weight: 700; margin-top: 0.2rem;">Systems & Networking</div>
+            <p style="font-size: 0.8rem; opacity: 0.8; margin-top: 0.3rem;">Linux • Docker • Cloud Architecture</p>
+          </div>
+
+          <!-- Background Right Card -->
+          <div class="photo-card card-back-right">
+            <div style="font-size: 0.8rem; font-family: var(--font-mono); opacity: 0.85;">ACADEMIC STATUS</div>
+            <div style="font-size: 1.15rem; font-weight: 700; margin-top: 0.2rem;">4th Level Senior</div>
+            <p style="font-size: 0.8rem; opacity: 0.8; margin-top: 0.3rem;">B.Sc. in Information Technology</p>
+          </div>
+
+          <!-- Main Top Card (With User's Photograph) -->
+          <div class="photo-card card-main">
+            <img src="assets/images/ebraheem.jpg" alt="Ebraheem Al-moqbily">
+            <div class="photo-overlay-tag">
+              <div>
+                <h4>Ebraheem Al-moqbily</h4>
+                <p>IT Senior & Software Engineer</p>
+              </div>
+              <span class="status-dot"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Bento Grid Showcase Section (Signature Braydon Coyer Feature)
+       ========================================================================= -->
+  <section id="bento" class="bento-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">About & Overview</span>
+        <h2 class="section-title">The Bento Grid</h2>
+        <p class="section-subtitle">A modular glimpse into my background, academic focus, daily tech stack, and engineering philosophy.</p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Bento Card 1: Biography & Education (Col Span 2) -->
+        <div class="bento-card col-span-2 bento-bio-card">
+          <div class="bento-card-header">
+            <div class="bento-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+            </div>
+            <span class="badge-pill">4th Level IT</span>
+          </div>
+          <div class="bio-content">
+            <h3 class="bento-title">Information Technology Undergraduate</h3>
+            <p class="bento-text">
+              I am currently in my fourth and final year studying Information Technology at college. My degree combines deep foundational computer science concepts—algorithms, database internals, systems administration, and data communication—with hands-on full-stack software development.
+            </p>
+            <p class="bento-text" style="margin-top: 0.75rem;">
+              My goal is to build software that is not only visually polished and intuitive, but also architecturally sound, secure, and resilient under real-world traffic.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bento Card 2: Live Time & Location (Col Span 1) -->
+        <div class="bento-card col-span-1">
+          <div class="bento-card-header">
+            <div class="bento-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <span class="status-dot"></span>
+          </div>
+          <div>
+            <span class="timezone-label">LOCAL CLOCK • UTC+3</span>
+            <div id="live-clock" class="time-display">00:00:00</div>
+            <p class="bento-text">Ready for synchronous collaboration across global timezones.</p>
+          </div>
+        </div>
+
+        <!-- Bento Card 3: Now / Current Focus (Col Span 1) -->
+        <div class="bento-card col-span-1">
+          <div class="bento-card-header">
+            <div class="bento-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="2"></circle>
+                <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"></path>
+              </svg>
+            </div>
+            <div class="music-bar-container" title="Audio equalizer visualizer">
+              <div class="music-bar"></div>
+              <div class="music-bar"></div>
+              <div class="music-bar"></div>
+              <div class="music-bar"></div>
+            </div>
+          </div>
+          <div>
+            <span class="timezone-label">CURRENT FOCUS</span>
+            <h3 class="bento-title" style="margin-top: 0.25rem;">Final Capstone & Systems</h3>
+            <p class="bento-text">Building enterprise-grade IT management software and exploring microservices architecture.</p>
+          </div>
+        </div>
+
+        <!-- Bento Card 4: Daily Tech Stack (Col Span 2) -->
+        <div class="bento-card col-span-2">
+          <div class="bento-card-header">
+            <div class="bento-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <span class="badge-pill">Toolkit</span>
+          </div>
+          <div>
+            <h3 class="bento-title">Core Development Stack</h3>
+            <p class="bento-text">Languages and tools I reach for daily to build complete digital products:</p>
+            <div class="tech-pills-wrap">
+              <span class="tech-pill">TypeScript</span>
+              <span class="tech-pill">JavaScript (ES6+)</span>
+              <span class="tech-pill">React.js</span>
+              <span class="tech-pill">Next.js</span>
+              <span class="tech-pill">Node.js</span>
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">PostgreSQL</span>
+              <span class="tech-pill">MySQL</span>
+              <span class="tech-pill">Linux / Bash</span>
+              <span class="tech-pill">Docker</span>
+              <span class="tech-pill">Tailwind CSS</span>
+              <span class="tech-pill">Git / GitHub</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento Card 5: Engineering Craft & Principles (Col Span 2) -->
+        <div class="bento-card col-span-2">
+          <div class="bento-card-header">
+            <div class="bento-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <span class="badge-pill">Philosophy</span>
+          </div>
+          <div>
+            <h3 class="bento-title">Quality, Performance & Usability</h3>
+            <p class="bento-text">
+              I believe great software is where robust system engineering meets considerate design. Whether configuring reverse proxies, designing database schemas, or writing frontend animations, I prioritize code clarity, security best practices, and responsive feedback.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Featured Projects Section
+       ========================================================================= -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Featured Work</span>
+        <h2 class="section-title">Crafted with Purpose</h2>
+        <p class="section-subtitle">A curated collection of web platforms, IT infrastructure tools, and database systems built during my college career and personal development.</p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="project-filter-bar">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="fullstack">Full-Stack Web</button>
+        <button class="filter-btn" data-filter="it-infra">IT & Infrastructure</button>
+        <button class="filter-btn" data-filter="systems">Systems & Python</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1: CampusIT Helpdesk & Asset Management -->
+        <div class="project-card" data-category="it-infra">
+          <div class="project-banner">
+            <div class="project-preview-mockup">
+              <div class="mockup-header">
+                <span class="mockup-dot red"></span>
+                <span class="mockup-dot yellow"></span>
+                <span class="mockup-dot green"></span>
+              </div>
+              <div class="mockup-body">
+                <span class="mockup-badge">CAMPUS_IT_CORE // v2.4</span>
+                <div style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-top: 0.35rem;">Asset & Support Management</div>
+                <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 0.2rem;">PostgreSQL • Node.js • Dockerized</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div>
+              <div class="project-meta-top">
+                <span class="project-category">IT Infrastructure & Management</span>
+                <span class="badge-pill">Capstone Project</span>
+              </div>
+              <h3 class="project-title">CampusIT Helpdesk & Asset System</h3>
+              <p class="project-description">
+                A centralized IT service portal designed for academic institutions. Features lab workstation topology health tracking, automated ticket assignment with SLA alerts, and hardware warranty audits.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-pill">Node.js</span>
+                <span class="tech-pill">Express</span>
+                <span class="tech-pill">PostgreSQL</span>
+                <span class="tech-pill">Docker</span>
+                <span class="tech-pill">JWT</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <button class="btn-primary open-project-btn" data-project="campus-it">
+                <span>View Details</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+              <a href="https://github.com/ENG-Ebraheem" target="_blank" rel="noopener noreferrer" class="link-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>Code</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: CloudVault Platform -->
+        <div class="project-card" data-category="fullstack">
+          <div class="project-banner">
+            <div class="project-preview-mockup">
+              <div class="mockup-header">
+                <span class="mockup-dot red"></span>
+                <span class="mockup-dot yellow"></span>
+                <span class="mockup-dot green"></span>
+              </div>
+              <div class="mockup-body">
+                <span class="mockup-badge">CLOUD_VAULT // ZERO_TRUST</span>
+                <div style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-top: 0.35rem;">Secure Cloud Storage</div>
+                <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 0.2rem;">Next.js • TypeScript • S3 Cloud</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div>
+              <div class="project-meta-top">
+                <span class="project-category">Cloud & Full-Stack</span>
+                <span class="badge-pill">Production</span>
+              </div>
+              <h3 class="project-title">CloudVault - Secure File Storage</h3>
+              <p class="project-description">
+                A high-performance cloud drive application with client-side encryption, chunked upload engine for files up to 10GB, and expiring password-protected download links.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-pill">Next.js</span>
+                <span class="tech-pill">TypeScript</span>
+                <span class="tech-pill">AWS S3</span>
+                <span class="tech-pill">Prisma</span>
+                <span class="tech-pill">Tailwind CSS</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <button class="btn-primary open-project-btn" data-project="cloudvault">
+                <span>View Details</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+              <a href="https://github.com/ENG-Ebraheem" target="_blank" rel="noopener noreferrer" class="link-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>Code</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: SmartClinic Medical Records Portal -->
+        <div class="project-card" data-category="fullstack">
+          <div class="project-banner">
+            <div class="project-preview-mockup">
+              <div class="mockup-header">
+                <span class="mockup-dot red"></span>
+                <span class="mockup-dot yellow"></span>
+                <span class="mockup-dot green"></span>
+              </div>
+              <div class="mockup-body">
+                <span class="mockup-badge">SMART_CLINIC // EHR</span>
+                <div style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-top: 0.35rem;">Health Records & Bookings</div>
+                <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 0.2rem;">React • FastAPI • Redis • PostgreSQL</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div>
+              <div class="project-meta-top">
+                <span class="project-category">Full-Stack & Database</span>
+                <span class="badge-pill">Enterprise</span>
+              </div>
+              <h3 class="project-title">SmartClinic - Medical Records Hub</h3>
+              <p class="project-description">
+                A HIPAA-conscious patient appointment scheduler and electronic health records portal featuring zero-conflict booking with Redis distributed locks and digital prescription generators.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-pill">React</span>
+                <span class="tech-pill">FastAPI</span>
+                <span class="tech-pill">PostgreSQL</span>
+                <span class="tech-pill">Redis</span>
+                <span class="tech-pill">Docker</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <button class="btn-primary open-project-btn" data-project="smartclinic">
+                <span>View Details</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+              <a href="https://github.com/ENG-Ebraheem" target="_blank" rel="noopener noreferrer" class="link-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>Code</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: NetPulse Network Monitor -->
+        <div class="project-card" data-category="systems">
+          <div class="project-banner">
+            <div class="project-preview-mockup">
+              <div class="mockup-header">
+                <span class="mockup-dot red"></span>
+                <span class="mockup-dot yellow"></span>
+                <span class="mockup-dot green"></span>
+              </div>
+              <div class="mockup-body">
+                <span class="mockup-badge">NET_PULSE // TELEMETRY</span>
+                <div style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-top: 0.35rem;">Real-Time Network Diagnostics</div>
+                <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 0.2rem;">Python • WebSockets • Packet Sniffer</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div>
+              <div class="project-meta-top">
+                <span class="project-category">Networking & Python</span>
+                <span class="badge-pill">Open Source</span>
+              </div>
+              <h3 class="project-title">NetPulse - Diagnostic Dashboard</h3>
+              <p class="project-description">
+                A lightweight network monitoring daemon that tracks latency, ICMP jitter, active socket connections, and abnormal packet spikes, broadcasting live alerts to a browser dashboard.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">WebSockets</span>
+                <span class="tech-pill">Linux</span>
+                <span class="tech-pill">Chart.js</span>
+                <span class="tech-pill">Bash</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <button class="btn-primary open-project-btn" data-project="netpulse">
+                <span>View Details</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+              <a href="https://github.com/ENG-Ebraheem" target="_blank" rel="noopener noreferrer" class="link-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <span>Code</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Skills & Toolbox Section
+       ========================================================================= -->
+  <section id="skills" class="skills-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Skills & Knowledge</span>
+        <h2 class="section-title">The Developer Toolbox</h2>
+        <p class="section-subtitle">Proficiencies cultivated across 4 years of college study, independent engineering projects, and systems administration.</p>
+      </div>
+
+      <div class="skills-container">
+        <!-- Category 1: Frontend Craft -->
+        <div class="skill-category-card">
+          <div class="category-title-wrap">
+            <div class="category-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="category-title">Frontend & UI</h3>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">React.js & Next.js</span>
+                <span class="skill-level-text">Advanced</span>
+              </div>
+              <div class="skill-progress-track"><div class="skill-progress-bar" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">TypeScript / JavaScript</span>
+                <span class="skill-level-text">Proficient</span>
+              </div>
+              <div class="skill-progress-track"><div class="skill-progress-bar" style="width: 88%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Tailwind CSS & Modern CSS</span>
+                <span class="skill-level-text">Expert</span>
+              </div>
+              <div class="skill-progress-track"><div class="skill-progress-bar" style="width: 95%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Responsive & Accessible UX</span>
+                <span class="skill-level-text">Proficient</span>
+              </div>
+              <div class="skill-progress-track"><div class="skill-progress-bar" style="width: 85%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Backend & Database -->
+        <div class="skill-category-card">
+          <div class="category-title-wrap">
+            <div class="category-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+            </div>
+            <h3 class="category-title">Backend & Data</h3>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Node.js & Express</span>
+                <span class="skill-level-text">Advanced</span>
+              </div>
+              <div class="skill-progress-track"><div class="skill-progress-bar" style="width: 88%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Python & FastAPI</span>
+                <span class="skill-level-text">Proficient</span>
+              </div>
+              <div class="skill-progress-track"><div class="skill-progress-bar" style="width: 82%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">PostgreSQL & MySQL</span>
+                <span class="skill-level-text">Advanced</span>
+              </div>
+              <div class="skill-progress-track"><div class="skill-progress-bar" style="width: 85%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">RESTful APIs & Auth (JWT)</span>
+                <span class="skill-level-text">Expert</span>
+              </div>
+              <div class="skill-progress-track"><div class="skill-progress-bar" style="width: 90%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: IT & Systems Engineering -->
+        <div class="skill-category-card">
+          <div class="category-title-wrap">
+            <div class="category-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+              </svg>
+            </div>
+            <h3 class="category-title">IT & Infrastructure</h3>
+          </div>
+          <div class="skill-items-list">
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Linux / Bash Scripting</span>
+                <span class="skill-level-text">Advanced</span>
+              </div>
+              <div class="skill-progress-track"><div class="skill-progress-bar" style="width: 86%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Computer Networks (TCP/IP, DNS)</span>
+                <span class="skill-level-text">Advanced</span>
+              </div>
+              <div class="skill-progress-track"><div class="skill-progress-bar" style="width: 85%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Docker & Containerization</span>
+                <span class="skill-level-text">Proficient</span>
+              </div>
+              <div class="skill-progress-track"><div class="skill-progress-bar" style="width: 80%;"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-info">
+                <span class="skill-name">Git & CI/CD Workflows</span>
+                <span class="skill-level-text">Proficient</span>
+              </div>
+              <div class="skill-progress-track"><div class="skill-progress-bar" style="width: 88%;"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Experience & Education Timeline Section
+       ========================================================================= -->
+  <section id="timeline" class="timeline-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Career & Academics</span>
+        <h2 class="section-title">Timeline & Education</h2>
+        <p class="section-subtitle">A chronological record of my academic milestones in Information Technology and practical engineering experience.</p>
+      </div>
+
+      <div class="timeline-grid">
+        <!-- Education Column -->
+        <div class="timeline-column">
+          <div class="timeline-column-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </svg>
+            <span>Education</span>
+          </div>
+
+          <div class="timeline-list">
+            <!-- 4th Level IT Degree -->
+            <div class="timeline-item">
+              <span class="timeline-period">2022 — PRESENT (4TH LEVEL)</span>
+              <h4 class="timeline-role">Bachelor of Science in Information Technology</h4>
+              <p class="timeline-org">College of Computer Science & Information Technology</p>
+              <p class="timeline-desc">
+                Enrolled in the senior 4th level. Core curriculum includes Distributed Systems, Software Engineering, Relational Database Management, Computer Network Protocols, Information Security, and Capstone Project development.
+              </p>
+            </div>
+
+            <!-- College Preparatory / High School -->
+            <div class="timeline-item">
+              <span class="timeline-period">2019 — 2022</span>
+              <h4 class="timeline-role">General Secondary Certificate — Scientific Major</h4>
+              <p class="timeline-org">Secondary School for Scientific Excellence</p>
+              <p class="timeline-desc">
+                Graduated with top academic standing with honors in advanced mathematics, physics, and computer fundamentals.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience Column -->
+        <div class="timeline-column">
+          <div class="timeline-column-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+            <span>Experience & Projects</span>
+          </div>
+
+          <div class="timeline-list">
+            <!-- Capstone & Lab Assistant -->
+            <div class="timeline-item">
+              <span class="timeline-period">2024 — PRESENT</span>
+              <h4 class="timeline-role">Lead Developer & Capstone Engineer</h4>
+              <p class="timeline-org">Senior Graduation Project</p>
+              <p class="timeline-desc">
+                Architecting the CampusIT platform: engineered database schema migrations, implemented secure JWT token authentication, containerized services using Docker Compose, and configured Nginx load balancing.
+              </p>
+            </div>
+
+            <!-- Freelance Developer & IT Consultant -->
+            <div class="timeline-item">
+              <span class="timeline-period">2023 — PRESENT</span>
+              <h4 class="timeline-role">Freelance Web Developer & IT Consultant</h4>
+              <p class="timeline-org">Independent Contractor</p>
+              <p class="timeline-desc">
+                Delivered bespoke web applications for regional clients, designed responsive dashboards, diagnosed Linux web server issues, and configured domain DNS, SSL certificates, and database backups.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Articles & Insights Section (Braydon Coyer "Blogfolio" Feature)
+       ========================================================================= -->
+  <section id="articles" class="articles-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Writing & Thoughts</span>
+        <h2 class="section-title">Articles & Technical Notes</h2>
+        <p class="section-subtitle">Reflections on software architecture, IT infrastructure insights, and learnings from public building.</p>
+      </div>
+
+      <div class="articles-grid">
+        <!-- Article 1 -->
+        <div class="article-card" data-article="art-1">
+          <div>
+            <div class="article-header">
+              <span>Oct 2026</span>
+              <span>6 min read</span>
+            </div>
+            <h3 class="article-title">Building Resilient REST APIs with Node.js & TypeScript</h3>
+            <p class="article-excerpt">
+              Practical strategies for eliminating runtime exceptions, handling RFC 7807 problem details, and executing graceful process teardowns during cloud rollouts.
+            </p>
+          </div>
+          <div class="article-footer">
+            <span>Read Article</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </div>
+
+        <!-- Article 2 -->
+        <div class="article-card" data-article="art-2">
+          <div>
+            <div class="article-header">
+              <span>Sep 2026</span>
+              <span>8 min read</span>
+            </div>
+            <h3 class="article-title">Modern IT Infrastructure: Why Every Developer Should Master Linux & Docker</h3>
+            <p class="article-excerpt">
+              How understanding kernel cgroups, network namespaces, and container virtualization elevates your capability from frontend developer to full systems thinker.
+            </p>
+          </div>
+          <div class="article-footer">
+            <span>Read Article</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </div>
+
+        <!-- Article 3 -->
+        <div class="article-card" data-article="art-3">
+          <div>
+            <div class="article-header">
+              <span>Aug 2026</span>
+              <span>5 min read</span>
+            </div>
+            <h3 class="article-title">My 4-Year Journey in Information Technology: Lessons & Milestones</h3>
+            <p class="article-excerpt">
+              Reflecting on key academic breakthroughs, transitioning from basic programming to systems architecture, and the transformative power of learning in public.
+            </p>
+          </div>
+          <div class="article-footer">
+            <span>Read Article</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Stats Strip (Public Analytics Inspiration)
+       ========================================================================= -->
+  <section id="stats" class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-number" data-target="4" data-suffix="th">0</div>
+          <div class="stat-label">College Level (Final Year)</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number" data-target="25" data-suffix="+">0</div>
+          <div class="stat-label">Projects & Repositories</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number" data-target="15" data-suffix="+">0</div>
+          <div class="stat-label">Core Tech Stack Skills</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number" data-target="100" data-suffix="%">0</div>
+          <div class="stat-label">Dedication to Craft</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Contact & Connect Section
+       ========================================================================= -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-card-wrapper">
+        <div class="contact-info">
+          <div>
+            <span class="section-tag">Let's Connect</span>
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">
+              Have an opening for an ambitious IT graduate, a freelance project, or just want to discuss software systems? My inbox is always open.
+            </p>
+          </div>
+
+          <div class="contact-channels">
+            <a href="mailto:ebraheem.almoqbily@example.com" class="channel-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>ebraheem.almoqbily@example.com</span>
+            </a>
+            <a href="https://github.com/ENG-Ebraheem" target="_blank" rel="noopener noreferrer" class="channel-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              <span>github.com/ENG-Ebraheem</span>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="channel-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              <span>LinkedIn Profile</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive Direct Message Form -->
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" id="name" class="form-input" placeholder="What's your name?" required>
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Your Email</label>
+            <input type="email" id="email" class="form-input" placeholder="name@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="subject" class="form-label">Subject</label>
+            <input type="text" id="subject" class="form-input" placeholder="Project Inquiry / Job Opportunity" required>
+          </div>
+          <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" class="form-textarea" placeholder="Tell me about your project, idea, or role..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+            <span>Send Message</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Footer Section
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="quote-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path></svg>
+          <div>
+            <span id="footer-quote-text">“Good code is its own best documentation.”</span>
+            <span id="footer-quote-author" style="margin-left: 0.5rem; opacity: 0.7;">— Steve McConnell</span>
+          </div>
+        </div>
+
+        <a href="#hero" class="btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+          <span>Back to Top</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+        </a>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Ebraheem Al-moqbily. Crafted with precision & pride.
+        </div>
+        <div class="footer-social-links">
+          <a href="https://github.com/ENG-Ebraheem" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:ebraheem.almoqbily@example.com">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       Project Details Modal Dialog
+       ========================================================================= -->
+  <div id="project-modal" class="modal-backdrop">
+    <div class="modal-card">
+      <button id="modal-close-btn" class="modal-close-btn" aria-label="Close dialog">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <span id="modal-category" class="project-category" style="margin-bottom: 0.4rem; display: block;">Category</span>
+      <h3 id="modal-title" style="font-size: 1.6rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.75rem;">Project Title</h3>
+
+      <div id="modal-tags" class="tech-pills-wrap" style="margin-bottom: 1.25rem;"></div>
+
+      <p id="modal-summary" style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.25rem;"></p>
+
+      <div style="background: var(--bg-secondary); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 1.25rem; border: 1px solid var(--border-subtle);">
+        <h4 style="font-size: 0.9rem; font-weight: 700; color: var(--accent-primary); text-transform: uppercase; margin-bottom: 0.4rem;">The Problem</h4>
+        <p id="modal-problem" style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.55;"></p>
+        
+        <h4 style="font-size: 0.9rem; font-weight: 700; color: #10b981; text-transform: uppercase; margin-top: 0.85rem; margin-bottom: 0.4rem;">The Solution</h4>
+        <p id="modal-solution" style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.55;"></p>
+      </div>
+
+      <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.6rem;">Key Technical Features</h4>
+      <ul id="modal-features" style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; padding-left: 1.25rem; margin-bottom: 1.5rem;"></ul>
+
+      <div style="display: flex; gap: 0.75rem; border-top: 1px solid var(--border-subtle); padding-top: 1.25rem;">
+        <a id="modal-github-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 0.85rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          <span>View on GitHub</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Article Reading Modal Dialog
+       ========================================================================= -->
+  <div id="article-modal" class="modal-backdrop">
+    <div class="modal-card">
+      <button id="article-modal-close-btn" class="modal-close-btn" aria-label="Close dialog">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <span id="art-modal-meta" style="font-size: 0.8rem; font-family: var(--font-mono); color: var(--accent-primary); margin-bottom: 0.5rem; display: block;"></span>
+      <h3 id="art-modal-title" style="font-size: 1.6rem; font-weight: 800; color: var(--text-primary); margin-bottom: 1.25rem; line-height: 1.3;"></h3>
+
+      <div id="art-modal-body" style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.75;"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Stack -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Core Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

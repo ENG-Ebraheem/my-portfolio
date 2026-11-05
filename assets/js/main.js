@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
           osc.start(now + idx * 0.07);
           osc.stop(now + idx * 0.07 + 0.2);
         });
-      } catch (e) {}
+      } catch (e) { }
     }
 
     toggleMute() {
@@ -477,11 +477,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (copyEmailBtn) {
     copyEmailBtn.addEventListener('click', () => {
       sfx.success();
-      const email = 'ebraheem.almoqbily@example.com';
+      const email = 'ibraheem770556950@gmail.com';
       navigator.clipboard.writeText(email).then(() => {
         showToast('Email copied to clipboard! 📋 (' + email + ')');
       }).catch(() => {
-        showToast('Email: ebraheem.almoqbily@example.com');
+        showToast('Email: ibraheem770556950@gmail.com');
       });
     });
   }

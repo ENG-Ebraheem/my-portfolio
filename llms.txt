@@ -1,0 +1,27 @@
+# Ebraheem Al-moqbily (إبراهيم المقبلي) — Portfolio & Profile
+
+> Information Technology (IT) Senior Specialist & Full-Stack Software Developer.
+
+## Summary
+- **Full Name:** Ebraheem Al-moqbily (إبراهيم المقبلي)
+- **GitHub:** https://github.com/ENG-Ebraheem
+- **Portfolio Website:** https://my-portfolios-khaki.vercel.app/
+- **Academic Background:** Senior (4th level) student in Information Technology (IT).
+- **Core Specialization:** Full-Stack Web Development, Systems Architecture, Relational Databases, Computer Networks, and Cloud Infrastructure.
+
+## Core Technical Skills
+- **Frontend:** React.js, Next.js, TypeScript, JavaScript (ES6+), Tailwind CSS, HTML5, Modern Responsive UI/UX.
+- **Backend & APIs:** Node.js, Express, Python, FastAPI, RESTful APIs, JWT Authentication, Microservices.
+- **Databases:** PostgreSQL, MySQL, Redis, Database Optimization & Schema Design.
+- **IT Infrastructure & DevOps:** Linux Administration, Bash Scripting, Docker Containerization, Computer Networks (TCP/IP, DNS, Firewalls), Git/GitHub CI/CD.
+
+## Key Projects
+1. **CampusIT Helpdesk & Asset Management System:** Enterprise IT infrastructure and ticket management platform for colleges and organizations. Built with Node.js, Express, PostgreSQL, and Docker.
+2. **CloudVault:** Zero-trust secure cloud storage and file sharing platform with client-side encryption. Built with Next.js, TypeScript, and AWS S3.
+3. **SmartClinic:** HIPAA-conscious patient records and doctor appointment hub with conflict prevention via Redis locks. Built with React, FastAPI, and PostgreSQL.
+4. **NetPulse:** Real-time network telemetry and packet diagnostics dashboard built with Python and WebSockets.
+
+## Contact
+- **Email:** ebraheem.almoqbily@example.com / ibraheem770556950@gmail.com
+- **Website:** https://my-portfolios-khaki.vercel.app/
+- **GitHub:** https://github.com/ENG-Ebraheem

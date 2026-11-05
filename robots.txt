@@ -1,0 +1,27 @@
+# robots.txt for Ebraheem Al-moqbily Portfolio
+User-agent: *
+Allow: /
+
+# Explicitly allow AI Search Engines & LLM Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://my-portfolios-khaki.vercel.app/sitemap.xml

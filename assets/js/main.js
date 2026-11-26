@@ -487,15 +487,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 11. Contact Form Submission (FormSubmit.co -> ibraheem770556950@gmail.com)
+  // 11. Contact Form Submission (Web3Forms -> ibraheem770556950@gmail.com)
   // --------------------------------------------------------------------------
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
+    const contactStatus = document.getElementById('contact-status');
+
+    function setContactStatus(type, htmlMessage) {
+      if (!contactStatus) return;
+      contactStatus.className = `form-status ${type}`;
+      contactStatus.innerHTML = htmlMessage;
+      contactStatus.style.display = 'block';
+    }
+
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const honeyInput = contactForm.querySelector('input[name="_honey"]');
-      if (honeyInput && honeyInput.value) return;
+      const botCheck = contactForm.querySelector('input[name="botcheck"]');
+      if (botCheck && botCheck.checked) return;
 
       const nameVal = document.getElementById('name').value.trim();
       const emailVal = document.getElementById('email').value.trim();
@@ -507,43 +516,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
       submitBtn.innerHTML = `<span>Sending...</span>`;
       submitBtn.disabled = true;
+      if (contactStatus) contactStatus.style.display = 'none';
+
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000);
 
       try {
-        const response = await fetch('https://formsubmit.co/ajax/ibraheem770556950@gmail.com', {
+        const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
           },
+          signal: controller.signal,
           body: JSON.stringify({
+            access_key: '15821e6c-daef-443b-b5e1-c15ad90d75b0',
+            from_name: 'Ebraheem Portfolio Contact',
             name: nameVal,
             email: emailVal,
-            subject: subjectVal,
+            subject: `Portfolio Contact: ${subjectVal}`,
             message: messageVal,
-            _subject: `Portfolio Contact: ${subjectVal}`,
-            _template: 'table',
-            _captcha: 'false'
+            replyto: emailVal
           })
         });
 
+        clearTimeout(timeoutId);
         const result = await response.json().catch(() => ({}));
-        const isSuccess = result.success === true || result.success === 'true';
 
-        if (response.ok && isSuccess) {
+        if (response.ok && result.success === true) {
           sfx.success();
           contactForm.reset();
+          setContactStatus('success', '✅ Message sent successfully! Thank you for reaching out.');
           showToast('Thank you! Your message has been sent to my inbox. 🚀');
-        } else if (result.message && result.message.toLowerCase().includes('activation')) {
-          sfx.pop();
-          showToast('Activation email sent! Check Gmail (Inbox/Spam) to activate.', 6000);
         } else {
           throw new Error(result.message || 'Unable to send message right now.');
         }
       } catch (err) {
-        showToast('Could not send via form. Opening email client instead...', 4000);
+        clearTimeout(timeoutId);
         const mailtoSubject = encodeURIComponent(subjectVal);
         const mailtoBody = encodeURIComponent(`From: ${nameVal} (${emailVal})\n\n${messageVal}`);
-        window.location.href = `mailto:ibraheem770556950@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+        const mailtoHref = `mailto:ibraheem770556950@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+        setContactStatus(
+          'error',
+          `⚠️ Could not deliver automatically right now. <a href="${mailtoHref}">Click here to send via your email app</a>.`
+        );
+        showToast('Could not send via form. Please use the email link below.', 4500);
       } finally {
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;

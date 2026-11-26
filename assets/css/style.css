@@ -1287,6 +1287,37 @@ img {
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
 }
 
+.form-status {
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  line-height: 1.5;
+  text-align: center;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.form-status.success {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #10b981;
+}
+
+.form-status.error {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #f87171;
+}
+
+[data-theme="light"] .form-status.error {
+  color: #dc2626;
+}
+
+.form-status a {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
 /* --------------------------------------------------------------------------
    Footer
    -------------------------------------------------------------------------- */

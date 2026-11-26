@@ -84,7 +84,7 @@
     rel="stylesheet">
 
   <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=2">
 </head>
 
 <body>
@@ -1037,11 +1037,10 @@
         </div>
 
         <!-- Interactive Direct Message Form -->
-        <form id="contact-form" class="contact-form" action="https://formsubmit.co/ibraheem770556950@gmail.com"
-          method="POST">
-          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
+        <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="15821e6c-daef-443b-b5e1-c15ad90d75b0">
+          <input type="hidden" name="from_name" value="Ebraheem Portfolio Contact">
+          <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
           <div class="form-group">
             <label for="name" class="form-label">Your Name</label>
             <input type="text" id="name" name="name" class="form-input" placeholder="What's your name?" required>
@@ -1067,6 +1066,7 @@
               <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
             </svg>
           </button>
+          <div id="contact-status" class="form-status" role="status" aria-live="polite" style="display: none;"></div>
         </form>
       </div>
     </div>
@@ -1197,7 +1197,7 @@
   <div id="toast-container" class="toast-container"></div>
 
   <!-- Core Scripts -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=2"></script>
 </body>
 
 </html>

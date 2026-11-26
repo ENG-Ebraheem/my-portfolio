@@ -487,25 +487,67 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 11. Contact Form Submission
+  // 11. Contact Form Submission (FormSubmit.co -> ibraheem770556950@gmail.com)
   // --------------------------------------------------------------------------
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      const honeyInput = contactForm.querySelector('input[name="_honey"]');
+      if (honeyInput && honeyInput.value) return;
+
+      const nameVal = document.getElementById('name').value.trim();
+      const emailVal = document.getElementById('email').value.trim();
+      const subjectVal = document.getElementById('subject').value.trim();
+      const messageVal = document.getElementById('message').value.trim();
+
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
 
       submitBtn.innerHTML = `<span>Sending...</span>`;
       submitBtn.disabled = true;
 
-      setTimeout(() => {
-        sfx.success();
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/ibraheem770556950@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: nameVal,
+            email: emailVal,
+            subject: subjectVal,
+            message: messageVal,
+            _subject: `Portfolio Contact: ${subjectVal}`,
+            _template: 'table',
+            _captcha: 'false'
+          })
+        });
+
+        const result = await response.json().catch(() => ({}));
+        const isSuccess = result.success === true || result.success === 'true';
+
+        if (response.ok && isSuccess) {
+          sfx.success();
+          contactForm.reset();
+          showToast('Thank you! Your message has been sent to my inbox. 🚀');
+        } else if (result.message && result.message.toLowerCase().includes('activation')) {
+          sfx.pop();
+          showToast('Activation email sent! Check Gmail (Inbox/Spam) to activate.', 6000);
+        } else {
+          throw new Error(result.message || 'Unable to send message right now.');
+        }
+      } catch (err) {
+        showToast('Could not send via form. Opening email client instead...', 4000);
+        const mailtoSubject = encodeURIComponent(subjectVal);
+        const mailtoBody = encodeURIComponent(`From: ${nameVal} (${emailVal})\n\n${messageVal}`);
+        window.location.href = `mailto:ibraheem770556950@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+      } finally {
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
-        contactForm.reset();
-        showToast('Thank you! Your message has been sent successfully. 🚀');
-      }, 1000);
+      }
     });
   }
 

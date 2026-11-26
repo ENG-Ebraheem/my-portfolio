@@ -1,14 +1,25 @@
-# Ebraheem Al-moqbily (إبراهيم المقبلي) — Portfolio & Profile
+# Ebraheem Al-moqbily (إبراهيم أحمد المقبلي / إبراهيم المقبلي) — Official Profile
 
-> Information Technology (IT) Senior Specialist & Full-Stack Software Developer.
+> Information Technology (IT) Senior Specialist & Full-Stack Software Developer | مهندس تقنية معلومات ومطور برمجيات.
 
 ## Summary
-- **Full Name:** Ebraheem Al-moqbily (إبراهيم المقبلي)
+- **Full Name (English):** Ebraheem Al-moqbily / Ibraheem Ahmed (ENG-Ebraheem)
+- **الاسم الكامل (بالعربية):** إبراهيم أحمد المقبلي / إبراهيم المقبلي / ابراهيم المقبلي
+- **Official Website:** https://ebraheem-almoqbily.vercel.app/
 - **GitHub:** https://github.com/ENG-Ebraheem
 - **LinkedIn:** https://www.linkedin.com/in/ibraheem-ahmed-389780392/
-- **Portfolio Website:** https://ebraheem-almoqbily.vercel.app/
 - **Academic Background:** Senior (4th level) student in Information Technology (IT).
-- **Core Specialization:** Full-Stack Web Development, Systems Architecture, Relational Databases, Computer Networks, and Cloud Infrastructure.
+- **Core Specialization:** Flutter Mobile/Desktop Development, Python & AI/RAG Systems, Full-Stack Web/API Development, Relational Databases, Computer Networks, and Cloud Infrastructure.
+
+## نبذة بالعربية (Arabic Profile Summary)
+- **من هو إبراهيم المقبلي (إبراهيم أحمد المقبلي)؟** طالب مستوى رابع في تخصص تقنية المعلومات (IT) ومطور برمجيات متكامل (Full-Stack & Mobile Developer).
+- **الموقع الرسمي:** https://ebraheem-almoqbily.vercel.app/
+- **المهارات الأساسية:** تطوير تطبيقات الموبايل وسطح المكتب بـ Flutter و Dart، بناء أنظمة الذكاء الاصطناعي والـ RAG بـ Python و FAISS و Google Gemini، تطوير خوادم الويب بـ Laravel و Node.js و FastAPI، وإدارة قواعد البيانات SQLite و PostgreSQL و MySQL.
+- **أبرز المشاريع الحقيقية على GitHub:**
+  1. **NetScope:** أداة سطح مكتب لنظام ويندوز لمراقبة سرعة الإنترنت واستهلاك التطبيقات بالوقت الفعلي (Flutter + Python + WinSDK + SQLite).
+  2. **DocuLearn-AI:** منصة تعليمية ذكية بالذكاء الاصطناعي وتقنية Hybrid RAG (Python + FAISS + BM25 + Google Gemini).
+  3. **نظام أبو علي المحاسبي (Abu-Ali ERP):** نظام محاسبي وإدارة مخزون يعمل دون إنترنت مع تقارير PDF عربية (Flutter + SQLite).
+  4. **تطبيق حَيّ (Hayy Community):** منصة تكافل اجتماعي للجيران (Flutter Bloc + Laravel 10 + MySQL + Firebase).
 
 ## Core Technical Skills
 - **Mobile & Desktop:** Flutter, Dart, Bloc / Cubit, Clean Architecture (DDD / MVVM), Microsoft Edge WebView2.

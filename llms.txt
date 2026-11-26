@@ -6,7 +6,7 @@
 - **Full Name:** Ebraheem Al-moqbily (إبراهيم المقبلي)
 - **GitHub:** https://github.com/ENG-Ebraheem
 - **LinkedIn:** https://www.linkedin.com/in/ibraheem-ahmed-389780392/
-- **Portfolio Website:** https://my-portfolios-khaki.vercel.app/
+- **Portfolio Website:** https://ebraheem-almoqbily.vercel.app/
 - **Academic Background:** Senior (4th level) student in Information Technology (IT).
 - **Core Specialization:** Full-Stack Web Development, Systems Architecture, Relational Databases, Computer Networks, and Cloud Infrastructure.
 
@@ -26,7 +26,7 @@
 
 ## Contact
 - **Email:** ibraheem770556950@gmail.com
-- **Website:** https://my-portfolios-khaki.vercel.app/
+- **Website:** https://ebraheem-almoqbily.vercel.app/
 - **GitHub:** https://github.com/ENG-Ebraheem
 - **LinkedIn:** https://www.linkedin.com/in/ibraheem-ahmed-389780392/
 

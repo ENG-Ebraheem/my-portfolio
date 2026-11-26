@@ -142,8 +142,32 @@ button {
   font-family: inherit;
   cursor: pointer;
   border: none;
-  outline: none;
   background: transparent;
+}
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.65rem 1.15rem;
+  background: var(--accent-primary);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: var(--radius-full);
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 1rem;
 }
 
 img {
@@ -569,7 +593,8 @@ img {
   justify-content: space-between;
 }
 
-.photo-overlay-tag h4 {
+.photo-overlay-tag h4,
+.photo-overlay-tag .overlay-name {
   font-size: 0.95rem;
   font-weight: 600;
 }
@@ -1608,5 +1633,17 @@ img {
 [dir="rtl"] svg.rtl-flip {
   transform: scaleX(-1);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 
 

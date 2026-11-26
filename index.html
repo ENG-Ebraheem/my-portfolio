@@ -98,22 +98,25 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"
     rel="stylesheet">
+  <link rel="preload" as="image" href="assets/images/ebraheem.jpg" fetchpriority="high">
 
   <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=3">
+  <link rel="stylesheet" href="assets/css/style.css?v=4">
 </head>
 
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
   <!-- =========================================================================
        Floating Pill Navigation Bar (Braydon Coyer Signature Design)
        ========================================================================= -->
-  <div class="nav-wrapper">
-    <nav class="navbar">
+  <header class="nav-wrapper">
+    <nav class="navbar" aria-label="Main navigation">
       <a href="#hero" class="nav-brand">
-        <img src="assets/images/ebraheem.jpg" alt="Ebraheem Al-moqbily - إبراهيم أحمد المقبلي" class="brand-avatar">
+        <img src="assets/images/ebraheem.jpg" alt="Ebraheem Al-moqbily - إبراهيم أحمد المقبلي" class="brand-avatar"
+          width="32" height="32" decoding="async">
         <span data-i18n="nav.brand">Ebraheem</span>
       </a>
 
@@ -129,9 +132,10 @@
 
       <div class="nav-actions">
         <!-- Language Toggle Button (EN / عربي) -->
-        <button id="lang-toggle-btn" class="icon-btn lang-toggle-btn" aria-label="Switch Language"
+        <button id="lang-toggle-btn" type="button" class="icon-btn lang-toggle-btn" aria-label="Switch Language"
           title="التبديل إلى العربية / Switch to English">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
             <circle cx="12" cy="12" r="10"></circle>
             <line x1="2" y1="12" x2="22" y2="12"></line>
             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
@@ -140,16 +144,19 @@
         </button>
 
         <!-- Sound FX Toggle Button -->
-        <button id="sound-toggle-btn" class="icon-btn" aria-label="Toggle Sound Effects" title="Sound Effects">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <button id="sound-toggle-btn" type="button" class="icon-btn" aria-label="Toggle Sound Effects"
+          title="Sound Effects">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
             <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
             <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
           </svg>
         </button>
 
         <!-- Theme Toggle Button -->
-        <button id="theme-toggle-btn" class="icon-btn" aria-label="Toggle Theme" title="Switch Theme">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <button id="theme-toggle-btn" type="button" class="icon-btn" aria-label="Toggle Theme" title="Switch Theme">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -162,15 +169,11 @@
           </svg>
         </button>
 
-        <!-- Quick Resume Download Pill -->
-        <a href="#contact" class="badge-pill" style="display: none; @media(min-width: 640px){display:inline-flex;}">
-          <span class="status-dot"></span>
-          <span data-i18n="nav.hire">Hire Me</span>
-        </a>
-
         <!-- Mobile Menu Toggle -->
-        <button id="mobile-menu-btn" class="icon-btn mobile-menu-btn" aria-label="Open Navigation">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <button id="mobile-menu-btn" type="button" class="icon-btn mobile-menu-btn" aria-label="Open Navigation"
+          aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -178,10 +181,10 @@
         </button>
       </div>
     </nav>
-  </div>
+  </header>
 
   <!-- Mobile Dropdown Drawer -->
-  <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+  <nav id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile navigation">
     <a href="#hero" class="nav-link" data-i18n="mob.home">Home</a>
     <a href="#bento" class="nav-link" data-i18n="mob.about">About & Bento</a>
     <a href="#projects" class="nav-link" data-i18n="mob.projects">Featured Projects</a>
@@ -189,8 +192,9 @@
     <a href="#timeline" class="nav-link" data-i18n="mob.experience">Experience & Education</a>
     <a href="#articles" class="nav-link" data-i18n="mob.articles">Articles & Insights</a>
     <a href="#contact" class="nav-link" data-i18n="mob.contact">Get in Touch</a>
-  </div>
+  </nav>
 
+  <main id="main-content">
   <!-- =========================================================================
        Hero Section & Interactive Photo Fan-Out
        ========================================================================= -->
@@ -225,8 +229,10 @@
             <a href="#contact" class="btn-secondary">
               <span data-i18n="hero.btnTalk">Let's Talk</span>
             </a>
-            <button id="copy-email-btn" class="btn-secondary" data-i18n-title="copyEmail" title="Copy email address">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <button id="copy-email-btn" type="button" class="btn-secondary" data-i18n-title="copyEmail"
+              title="Copy email address">
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
                 <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
               </svg>
@@ -236,7 +242,8 @@
         </div>
 
         <!-- Interactive Photo Fan-Out Stack -->
-        <div class="photo-stack-container" data-i18n-title="photoStack" title="Click or hover to fan out photos!">
+        <div class="photo-stack-container" tabindex="0" role="button" data-i18n-title="photoStack"
+          title="Click or hover to fan out photos!">
           <!-- Background Left Card -->
           <div class="photo-card card-back-left">
             <div style="font-size: 0.8rem; font-family: var(--font-mono); opacity: 0.85;" data-i18n="hero.cardLeftTag">
@@ -259,10 +266,11 @@
 
           <!-- Main Top Card (With User's Photograph) -->
           <div class="photo-card card-main">
-            <img src="assets/images/ebraheem.jpg" alt="Ebraheem Al-moqbily - إبراهيم أحمد المقبلي">
+            <img src="assets/images/ebraheem.jpg" alt="Ebraheem Al-moqbily - إبراهيم أحمد المقبلي" width="1024"
+              height="489" fetchpriority="high" decoding="async">
             <div class="photo-overlay-tag">
               <div>
-                <h4 data-i18n="hero.overlayName">Ebraheem Al-moqbily</h4>
+                <div class="overlay-name" data-i18n="hero.overlayName">Ebraheem Al-moqbily</div>
                 <p data-i18n="hero.overlayRole">IT Senior & Software Engineer</p>
               </div>
               <span class="status-dot"></span>
@@ -436,10 +444,14 @@
 
       <!-- Category Filter Tabs -->
       <div class="project-filter-bar">
-        <button class="filter-btn active" data-filter="all" data-i18n="projects.filterAll">All Projects</button>
-        <button class="filter-btn" data-filter="flutter" data-i18n="projects.filterFlutter">Flutter & Apps</button>
-        <button class="filter-btn" data-filter="python" data-i18n="projects.filterPython">Python & AI</button>
-        <button class="filter-btn" data-filter="systems" data-i18n="projects.filterSystems">Backend & Systems</button>
+        <button type="button" class="filter-btn active" data-filter="all" data-i18n="projects.filterAll">All
+          Projects</button>
+        <button type="button" class="filter-btn" data-filter="flutter" data-i18n="projects.filterFlutter">Flutter &
+          Apps</button>
+        <button type="button" class="filter-btn" data-filter="python" data-i18n="projects.filterPython">Python &
+          AI</button>
+        <button type="button" class="filter-btn" data-filter="systems" data-i18n="projects.filterSystems">Backend &
+          Systems</button>
       </div>
 
       <div class="projects-grid">
@@ -481,7 +493,7 @@
               </div>
             </div>
             <div class="project-links">
-              <button class="btn-primary open-project-btn" data-project="netscope">
+              <button type="button" class="btn-primary open-project-btn" data-project="netscope">
                 <span data-i18n="projects.btnDetails">View Details</span>
                 <svg class="rtl-flip" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   stroke-width="2">
@@ -540,7 +552,7 @@
               </div>
             </div>
             <div class="project-links">
-              <button class="btn-primary open-project-btn" data-project="doculearn-ai">
+              <button type="button" class="btn-primary open-project-btn" data-project="doculearn-ai">
                 <span data-i18n="projects.btnDetails">View Details</span>
                 <svg class="rtl-flip" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   stroke-width="2">
@@ -598,7 +610,7 @@
               </div>
             </div>
             <div class="project-links">
-              <button class="btn-primary open-project-btn" data-project="abu-ali-erp">
+              <button type="button" class="btn-primary open-project-btn" data-project="abu-ali-erp">
                 <span data-i18n="projects.btnDetails">View Details</span>
                 <svg class="rtl-flip" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   stroke-width="2">
@@ -656,7 +668,7 @@
               </div>
             </div>
             <div class="project-links">
-              <button class="btn-primary open-project-btn" data-project="hayy-community">
+              <button type="button" class="btn-primary open-project-btn" data-project="hayy-community">
                 <span data-i18n="projects.btnDetails">View Details</span>
                 <svg class="rtl-flip" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   stroke-width="2">
@@ -869,13 +881,14 @@
       <div class="timeline-grid">
         <!-- Education Column -->
         <div class="timeline-column">
-          <div class="timeline-column-title">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <h3 class="timeline-column-title">
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
               <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
               <path d="M6 12v5c3 3 9 3 12 0v-5" />
             </svg>
             <span data-i18n="timeline.colEdu">Education</span>
-          </div>
+          </h3>
 
           <div class="timeline-list">
             <!-- 4th Level IT Degree -->
@@ -907,13 +920,14 @@
 
         <!-- Experience Column -->
         <div class="timeline-column">
-          <div class="timeline-column-title">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <h3 class="timeline-column-title">
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
               <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
               <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
             </svg>
             <span data-i18n="timeline.colExp">Experience & Projects</span>
-          </div>
+          </h3>
 
           <div class="timeline-list">
             <!-- Capstone & Engineering Systems -->
@@ -958,7 +972,7 @@
 
       <div class="articles-grid">
         <!-- Article 1 -->
-        <div class="article-card" data-article="art-1">
+        <div class="article-card" tabindex="0" role="button" data-article="art-1">
           <div>
             <div class="article-header">
               <span data-i18n="articles.a1Date">Oct 2026</span>
@@ -981,7 +995,7 @@
         </div>
 
         <!-- Article 2 -->
-        <div class="article-card" data-article="art-2">
+        <div class="article-card" tabindex="0" role="button" data-article="art-2">
           <div>
             <div class="article-header">
               <span data-i18n="articles.a2Date">Sep 2026</span>
@@ -1004,7 +1018,7 @@
         </div>
 
         <!-- Article 3 -->
-        <div class="article-card" data-article="art-3">
+        <div class="article-card" tabindex="0" role="button" data-article="art-3">
           <div>
             <div class="article-header">
               <span data-i18n="articles.a3Date">Aug 2026</span>
@@ -1136,6 +1150,7 @@
       </div>
     </div>
   </section>
+  </main>
 
   <!-- =========================================================================
        Footer Section
@@ -1185,10 +1200,11 @@
   <!-- =========================================================================
        Project Details Modal Dialog
        ========================================================================= -->
-  <div id="project-modal" class="modal-backdrop">
+  <div id="project-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-card">
-      <button id="modal-close-btn" class="modal-close-btn" aria-label="Close dialog">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <button id="modal-close-btn" type="button" class="modal-close-btn" aria-label="Close dialog">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
@@ -1227,7 +1243,8 @@
       <div style="display: flex; gap: 0.75rem; border-top: 1px solid var(--border-subtle); padding-top: 1.25rem;">
         <a id="modal-github-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary"
           style="font-size: 0.85rem;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
             <path
               d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
             </path>
@@ -1241,10 +1258,11 @@
   <!-- =========================================================================
        Article Reading Modal Dialog
        ========================================================================= -->
-  <div id="article-modal" class="modal-backdrop">
+  <div id="article-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="art-modal-title">
     <div class="modal-card">
-      <button id="article-modal-close-btn" class="modal-close-btn" aria-label="Close dialog">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <button id="article-modal-close-btn" type="button" class="modal-close-btn" aria-label="Close dialog">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
@@ -1261,11 +1279,11 @@
   </div>
 
   <!-- Toast Notification Stack -->
-  <div id="toast-container" class="toast-container"></div>
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
 
   <!-- Core Scripts -->
-  <script src="assets/js/i18n.js?v=1"></script>
-  <script src="assets/js/main.js?v=4"></script>
+  <script defer src="assets/js/i18n.js?v=2"></script>
+  <script defer src="assets/js/main.js?v=5"></script>
 </body>
 
 </html>

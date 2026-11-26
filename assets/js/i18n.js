@@ -13,7 +13,6 @@ window.PORTFOLIO_I18N = {
       'nav.experience': 'الخبرة',
       'nav.articles': 'المقالات',
       'nav.contact': 'تواصل معي',
-      'nav.hire': 'متاح للعمل',
       'mob.home': 'الرئيسية',
       'mob.about': 'نبذة عني',
       'mob.projects': 'أبرز المشاريع',

@@ -248,6 +248,13 @@ document.addEventListener('DOMContentLoaded', () => {
       photoContainer.classList.toggle('fanned');
       showToast(uiStr('photoToast', 'Ebraheem Al-moqbily • Senior IT Graduate & Engineer 🎓'));
     });
+
+    photoContainer.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        photoContainer.click();
+      }
+    });
   }
 
   // --------------------------------------------------------------------------
@@ -351,6 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const modalBackdrop = document.getElementById('project-modal');
   const modalCloseBtn = document.getElementById('modal-close-btn');
+  let lastFocusedTrigger = null;
 
   function openProjectModal(projectId) {
     sfx.pop();
@@ -358,6 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const data = arProject || projectDetails[projectId];
     if (!data || !modalBackdrop) return;
 
+    lastFocusedTrigger = document.activeElement;
     document.getElementById('modal-title').textContent = data.title;
     document.getElementById('modal-category').textContent = data.category;
     document.getElementById('modal-summary').textContent = data.summary;
@@ -386,14 +395,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     modalBackdrop.classList.add('active');
     document.body.style.overflow = 'hidden';
+    if (modalCloseBtn) modalCloseBtn.focus();
   }
 
   function closeModal() {
     sfx.click();
     if (modalBackdrop) modalBackdrop.classList.remove('active');
-    const articleModal = document.getElementById('article-modal');
-    if (articleModal) articleModal.classList.remove('active');
+    const articleModalEl = document.getElementById('article-modal');
+    if (articleModalEl) articleModalEl.classList.remove('active');
     document.body.style.overflow = '';
+    if (lastFocusedTrigger && typeof lastFocusedTrigger.focus === 'function') {
+      lastFocusedTrigger.focus();
+      lastFocusedTrigger = null;
+    }
   }
 
   document.querySelectorAll('.open-project-btn').forEach(btn => {
@@ -466,19 +480,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const articleCloseBtn = document.getElementById('article-modal-close-btn');
 
   document.querySelectorAll('.article-card').forEach(card => {
-    card.addEventListener('click', () => {
+    const openArticle = () => {
       sfx.pop();
       const id = card.getAttribute('data-article');
       const arArticle = currentLang === 'ar' && i18nData && i18nData.articles ? i18nData.articles[id] : null;
       const article = arArticle || articlesData[id];
       if (!article || !articleModal) return;
 
+      lastFocusedTrigger = document.activeElement;
       document.getElementById('art-modal-title').textContent = article.title;
       document.getElementById('art-modal-meta').textContent = `${article.date} • ${article.readTime} • ${article.tag}`;
       document.getElementById('art-modal-body').innerHTML = article.content;
 
       articleModal.classList.add('active');
       document.body.style.overflow = 'hidden';
+      if (articleCloseBtn) articleCloseBtn.focus();
+    };
+
+    card.addEventListener('click', openArticle);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openArticle();
+      }
     });
   });
 
@@ -502,7 +526,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!toastContainer) return;
     const toast = document.createElement('div');
     toast.className = 'toast';
-    toast.innerHTML = `<span>${message}</span>`;
+    const span = document.createElement('span');
+    span.textContent = message;
+    toast.appendChild(span);
     toastContainer.appendChild(toast);
 
     setTimeout(() => {
@@ -687,29 +713,34 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mobileMenuBtn && mobileDrawer) {
     mobileMenuBtn.addEventListener('click', () => {
       sfx.pop();
-      mobileDrawer.classList.toggle('open');
+      const isOpen = mobileDrawer.classList.toggle('open');
+      mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
     });
 
     mobileDrawer.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         mobileDrawer.classList.remove('open');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
       });
     });
 
     document.addEventListener('click', (e) => {
       if (!mobileMenuBtn.contains(e.target) && !mobileDrawer.contains(e.target)) {
         mobileDrawer.classList.remove('open');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
       }
     });
   }
 
   // --------------------------------------------------------------------------
-  // 14. Scrollspy & Smooth Active Nav State
+  // 14. Scrollspy & Smooth Active Nav State (rAF-throttled passive listener)
   // --------------------------------------------------------------------------
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links .nav-link');
+  let scrollTicking = false;
 
-  window.addEventListener('scroll', () => {
+  function updateActiveNavLink() {
+    scrollTicking = false;
     let current = '';
     const scrollPos = window.scrollY + 180;
 
@@ -722,42 +753,52 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
+      link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
     });
-  });
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!scrollTicking) {
+      scrollTicking = true;
+      window.requestAnimationFrame(updateActiveNavLink);
+    }
+  }, { passive: true });
 
   // --------------------------------------------------------------------------
-  // 15. Animated Stats Counter
+  // 15. Animated Stats Counter (IntersectionObserver — Zero Scroll Overhead)
   // --------------------------------------------------------------------------
   const statsSection = document.getElementById('stats');
 
   function runStatsCounter() {
     if (statsCounted || !statsSection) return;
-    const rect = statsSection.getBoundingClientRect();
-    if (rect.top <= window.innerHeight * 0.85) {
-      statsCounted = true;
-      document.querySelectorAll('.stat-number').forEach(el => {
-        const target = parseInt(el.getAttribute('data-target'), 10);
-        let count = 0;
-        const step = Math.max(1, Math.floor(target / 40));
-        const timer = setInterval(() => {
-          count += step;
-          if (count >= target) {
-            el.textContent = `${target}${getStatSuffix(el)}`;
-            clearInterval(timer);
-          } else {
-            el.textContent = `${count}${getStatSuffix(el)}`;
-          }
-        }, 30);
-      });
-    }
+    statsCounted = true;
+    document.querySelectorAll('.stat-number').forEach(el => {
+      const target = parseInt(el.getAttribute('data-target'), 10);
+      let count = 0;
+      const step = Math.max(1, Math.floor(target / 40));
+      const timer = setInterval(() => {
+        count += step;
+        if (count >= target) {
+          el.textContent = `${target}${getStatSuffix(el)}`;
+          clearInterval(timer);
+        } else {
+          el.textContent = `${count}${getStatSuffix(el)}`;
+        }
+      }, 30);
+    });
   }
 
-  window.addEventListener('scroll', runStatsCounter);
-  runStatsCounter();
+  if (statsSection && 'IntersectionObserver' in window) {
+    const statsObserver = new IntersectionObserver((entries, observer) => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        runStatsCounter();
+        observer.disconnect();
+      }
+    }, { threshold: 0.25 });
+    statsObserver.observe(statsSection);
+  } else {
+    runStatsCounter();
+  }
 
   // --------------------------------------------------------------------------
   // 16. Language Toggle Application (EN <-> AR)

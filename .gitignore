@@ -31,4 +31,6 @@ Thumbs.db
 *.njsproj
 *.sln
 *.sw?
+*.bak
+.vercel/
 

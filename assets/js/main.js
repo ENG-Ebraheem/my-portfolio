@@ -492,12 +492,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     const contactStatus = document.getElementById('contact-status');
+    let statusHideTimer = null;
+    let statusFadeTimer = null;
+
+    function clearStatusTimers() {
+      if (statusHideTimer) clearTimeout(statusHideTimer);
+      if (statusFadeTimer) clearTimeout(statusFadeTimer);
+    }
 
     function setContactStatus(type, htmlMessage) {
       if (!contactStatus) return;
+      clearStatusTimers();
       contactStatus.className = `form-status ${type}`;
       contactStatus.innerHTML = htmlMessage;
+      contactStatus.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+      contactStatus.style.opacity = '1';
+      contactStatus.style.transform = 'translateY(0)';
       contactStatus.style.display = 'block';
+
+      if (type === 'success') {
+        statusFadeTimer = setTimeout(() => {
+          contactStatus.style.opacity = '0';
+          contactStatus.style.transform = 'translateY(-4px)';
+          statusHideTimer = setTimeout(() => {
+            contactStatus.style.display = 'none';
+          }, 350);
+        }, 4500);
+      }
     }
 
     contactForm.addEventListener('submit', async (e) => {
@@ -516,6 +537,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       submitBtn.innerHTML = `<span>Sending...</span>`;
       submitBtn.disabled = true;
+      clearStatusTimers();
       if (contactStatus) contactStatus.style.display = 'none';
 
       const controller = new AbortController();

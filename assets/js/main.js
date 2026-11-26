@@ -5,6 +5,44 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // --------------------------------------------------------------------------
+  // 0. Language State & Bilingual Helpers (EN / AR)
+  // --------------------------------------------------------------------------
+  const i18nData = (window.PORTFOLIO_I18N && window.PORTFOLIO_I18N.ar) || null;
+  let currentLang = localStorage.getItem('portfolio_lang') === 'ar' ? 'ar' : 'en';
+  let statsCounted = false;
+
+  const originalEn = { text: {}, html: {}, placeholders: {}, titles: {} };
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (!(key in originalEn.text)) originalEn.text[key] = el.textContent;
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (!(key in originalEn.html)) originalEn.html[key] = el.innerHTML;
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (!(key in originalEn.placeholders)) originalEn.placeholders[key] = el.getAttribute('placeholder') || '';
+  });
+  document.querySelectorAll('[data-i18n-title]').forEach(el => {
+    const key = el.getAttribute('data-i18n-title');
+    if (!(key in originalEn.titles)) originalEn.titles[key] = el.getAttribute('title') || '';
+  });
+
+  function uiStr(key, enFallback) {
+    if (currentLang === 'ar' && i18nData && i18nData.ui && key in i18nData.ui) {
+      return i18nData.ui[key];
+    }
+    return enFallback;
+  }
+
+  function getStatSuffix(el) {
+    if (currentLang === 'ar' && el.hasAttribute('data-suffix-ar')) {
+      return el.getAttribute('data-suffix-ar') || '';
+    }
+    return el.getAttribute('data-suffix') || '';
+  }
+  // --------------------------------------------------------------------------
   // 1. Audio System (Synthesized Web Audio API - Zero External Audio Files)
   // --------------------------------------------------------------------------
   class SoundFX {
@@ -83,9 +121,9 @@ document.addEventListener('DOMContentLoaded', () => {
       this.updateIcon();
       if (!this.muted) {
         this.pop();
-        showToast('Sound effects enabled 🔊');
+        showToast(uiStr('soundOn', 'Sound effects enabled 🔊'));
       } else {
-        showToast('Sound effects muted 🔇');
+        showToast(uiStr('soundOff', 'Sound effects muted 🔇'));
       }
     }
 
@@ -102,10 +140,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!btn) return;
       if (this.muted) {
         btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>`;
-        btn.setAttribute('title', 'Enable sound effects');
+        btn.setAttribute('title', uiStr('soundTitleOff', 'Enable sound effects'));
       } else {
         btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>`;
-        btn.setAttribute('title', 'Mute sound effects');
+        btn.setAttribute('title', uiStr('soundTitleOn', 'Mute sound effects'));
       }
     }
   }
@@ -129,10 +167,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (themeToggleBtn) {
       if (theme === 'light') {
         themeToggleBtn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
-        themeToggleBtn.setAttribute('title', 'Switch to Dark Mode');
+        themeToggleBtn.setAttribute('title', uiStr('themeTitleDark', 'Switch to Dark Mode'));
       } else {
         themeToggleBtn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
-        themeToggleBtn.setAttribute('title', 'Switch to Light Mode');
+        themeToggleBtn.setAttribute('title', uiStr('themeTitleLight', 'Switch to Light Mode'));
       }
     }
   }
@@ -145,7 +183,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const current = document.documentElement.getAttribute('data-theme') || 'dark';
       const next = current === 'dark' ? 'light' : 'dark';
       setTheme(next);
-      showToast(`Switched to ${next === 'dark' ? 'Dark' : 'Light'} Mode ✨`);
+      const toastMsg = next === 'dark'
+        ? uiStr('themeDarkToast', 'Switched to Dark Mode ✨')
+        : uiStr('themeLightToast', 'Switched to Light Mode ✨');
+      showToast(toastMsg);
     });
   }
 
@@ -205,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
     photoContainer.addEventListener('click', () => {
       sfx.pop();
       photoContainer.classList.toggle('fanned');
-      showToast('Ebraheem Al-moqbily • Senior IT Graduate & Engineer 🎓');
+      showToast(uiStr('photoToast', 'Ebraheem Al-moqbily • Senior IT Graduate & Engineer 🎓'));
     });
   }
 
@@ -313,7 +354,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function openProjectModal(projectId) {
     sfx.pop();
-    const data = projectDetails[projectId];
+    const arProject = currentLang === 'ar' && i18nData && i18nData.projects ? i18nData.projects[projectId] : null;
+    const data = arProject || projectDetails[projectId];
     if (!data || !modalBackdrop) return;
 
     document.getElementById('modal-title').textContent = data.title;
@@ -427,7 +469,8 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('click', () => {
       sfx.pop();
       const id = card.getAttribute('data-article');
-      const article = articlesData[id];
+      const arArticle = currentLang === 'ar' && i18nData && i18nData.articles ? i18nData.articles[id] : null;
+      const article = arArticle || articlesData[id];
       if (!article || !articleModal) return;
 
       document.getElementById('art-modal-title').textContent = article.title;
@@ -479,9 +522,9 @@ document.addEventListener('DOMContentLoaded', () => {
       sfx.success();
       const email = 'ibraheem770556950@gmail.com';
       navigator.clipboard.writeText(email).then(() => {
-        showToast('Email copied to clipboard! 📋 (' + email + ')');
+        showToast(`${uiStr('copySuccess', 'Email copied to clipboard! 📋')} (${email})`);
       }).catch(() => {
-        showToast('Email: ibraheem770556950@gmail.com');
+        showToast(uiStr('copyFallback', 'Email: ibraheem770556950@gmail.com'));
       });
     });
   }
@@ -500,11 +543,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (statusFadeTimer) clearTimeout(statusFadeTimer);
     }
 
-    function setContactStatus(type, htmlMessage) {
+    function setContactStatus(type, contentNodeOrText) {
       if (!contactStatus) return;
       clearStatusTimers();
       contactStatus.className = `form-status ${type}`;
-      contactStatus.innerHTML = htmlMessage;
+      contactStatus.innerHTML = '';
+      if (typeof contentNodeOrText === 'string') {
+        contactStatus.textContent = contentNodeOrText;
+      } else {
+        contactStatus.appendChild(contentNodeOrText);
+      }
       contactStatus.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
       contactStatus.style.opacity = '1';
       contactStatus.style.transform = 'translateY(0)';
@@ -535,7 +583,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const submitBtn = contactForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
 
-      submitBtn.innerHTML = `<span>Sending...</span>`;
+      submitBtn.innerHTML = `<span>${uiStr('sending', 'Sending...')}</span>`;
       submitBtn.disabled = true;
       clearStatusTimers();
       if (contactStatus) contactStatus.style.display = 'none';
@@ -568,8 +616,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (response.ok && result.success === true) {
           sfx.success();
           contactForm.reset();
-          setContactStatus('success', '✅ Message sent successfully! Thank you for reaching out.');
-          showToast('Thank you! Your message has been sent to my inbox. 🚀');
+          setContactStatus('success', uiStr('sentStatus', '✅ Message sent successfully! Thank you for reaching out.'));
+          showToast(uiStr('sentToast', 'Thank you! Your message has been sent to my inbox. 🚀'));
         } else {
           throw new Error(result.message || 'Unable to send message right now.');
         }
@@ -578,11 +626,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const mailtoSubject = encodeURIComponent(subjectVal);
         const mailtoBody = encodeURIComponent(`From: ${nameVal} (${emailVal})\n\n${messageVal}`);
         const mailtoHref = `mailto:ibraheem770556950@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
-        setContactStatus(
-          'error',
-          `⚠️ Could not deliver automatically right now. <a href="${mailtoHref}">Click here to send via your email app</a>.`
-        );
-        showToast('Could not send via form. Please use the email link below.', 4500);
+        const frag = document.createDocumentFragment();
+        frag.appendChild(document.createTextNode(uiStr('errorPrefix', '⚠️ Could not deliver automatically right now. ')));
+        const linkEl = document.createElement('a');
+        linkEl.href = mailtoHref;
+        linkEl.textContent = uiStr('errorLink', 'Click here to send via your email app');
+        frag.appendChild(linkEl);
+        frag.appendChild(document.createTextNode('.'));
+        setContactStatus('error', frag);
+        showToast(uiStr('errorToast', 'Could not send via form. Please use the email link below.'), 4500);
       } finally {
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
@@ -603,15 +655,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const quoteText = document.getElementById('footer-quote-text');
   const quoteAuthor = document.getElementById('footer-quote-author');
+  let quoteIdx = 0;
+
+  function renderCurrentQuote() {
+    if (!quoteText || !quoteAuthor) return;
+    const activeQuotes = (currentLang === 'ar' && i18nData && i18nData.quotes) ? i18nData.quotes : quotes;
+    const item = activeQuotes[quoteIdx % activeQuotes.length];
+    quoteText.textContent = `“${item.quote}”`;
+    quoteAuthor.textContent = `— ${item.author}`;
+  }
+
   if (quoteText && quoteAuthor) {
-    let quoteIdx = 0;
     setInterval(() => {
       quoteIdx = (quoteIdx + 1) % quotes.length;
       quoteText.style.opacity = '0';
       quoteAuthor.style.opacity = '0';
       setTimeout(() => {
-        quoteText.textContent = `“${quotes[quoteIdx].quote}”`;
-        quoteAuthor.textContent = `— ${quotes[quoteIdx].author}`;
+        renderCurrentQuote();
         quoteText.style.opacity = '1';
         quoteAuthor.style.opacity = '1';
       }, 300);
@@ -672,7 +732,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // --------------------------------------------------------------------------
   // 15. Animated Stats Counter
   // --------------------------------------------------------------------------
-  let statsCounted = false;
   const statsSection = document.getElementById('stats');
 
   function runStatsCounter() {
@@ -687,10 +746,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const timer = setInterval(() => {
           count += step;
           if (count >= target) {
-            el.textContent = `${target}${el.getAttribute('data-suffix') || ''}`;
+            el.textContent = `${target}${getStatSuffix(el)}`;
             clearInterval(timer);
           } else {
-            el.textContent = `${count}${el.getAttribute('data-suffix') || ''}`;
+            el.textContent = `${count}${getStatSuffix(el)}`;
           }
         }, 30);
       });
@@ -699,5 +758,91 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', runStatsCounter);
   runStatsCounter();
+
+  // --------------------------------------------------------------------------
+  // 16. Language Toggle Application (EN <-> AR)
+  // --------------------------------------------------------------------------
+  const langToggleBtn = document.getElementById('lang-toggle-btn');
+  const langToggleLabel = document.getElementById('lang-toggle-label');
+
+  function applyLanguage(lang, announce = false) {
+    currentLang = lang === 'ar' && i18nData ? 'ar' : 'en';
+    localStorage.setItem('portfolio_lang', currentLang);
+    document.documentElement.setAttribute('lang', currentLang);
+    document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (currentLang === 'ar' && key in i18nData.text) {
+        el.textContent = i18nData.text[key];
+      } else if (key in originalEn.text) {
+        el.textContent = originalEn.text[key];
+      }
+    });
+
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      if (currentLang === 'ar' && key in i18nData.html) {
+        el.innerHTML = i18nData.html[key];
+      } else if (key in originalEn.html) {
+        el.innerHTML = originalEn.html[key];
+      }
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (currentLang === 'ar' && key in i18nData.placeholders) {
+        el.setAttribute('placeholder', i18nData.placeholders[key]);
+      } else if (key in originalEn.placeholders) {
+        el.setAttribute('placeholder', originalEn.placeholders[key]);
+      }
+    });
+
+    document.querySelectorAll('[data-i18n-title]').forEach(el => {
+      const key = el.getAttribute('data-i18n-title');
+      if (currentLang === 'ar' && key in i18nData.titles) {
+        el.setAttribute('title', i18nData.titles[key]);
+      } else if (key in originalEn.titles) {
+        el.setAttribute('title', originalEn.titles[key]);
+      }
+    });
+
+    document.querySelectorAll('[data-hide-on-lang]').forEach(el => {
+      const hideLang = el.getAttribute('data-hide-on-lang');
+      el.style.display = currentLang === hideLang ? 'none' : '';
+    });
+
+    if (langToggleLabel) {
+      langToggleLabel.textContent = currentLang === 'ar' ? 'EN' : 'عربي';
+    }
+
+    if (statsCounted) {
+      document.querySelectorAll('.stat-number').forEach(el => {
+        const target = el.getAttribute('data-target');
+        el.textContent = `${target}${getStatSuffix(el)}`;
+      });
+    }
+
+    renderCurrentQuote();
+    sfx.updateIcon();
+    setTheme(document.documentElement.getAttribute('data-theme') || 'dark');
+
+    if (announce) {
+      showToast(
+        currentLang === 'ar'
+          ? uiStr('switchedToAr', 'تم التحويل إلى اللغة العربية 🇸🇦')
+          : 'Switched to English ✨'
+      );
+    }
+  }
+
+  if (langToggleBtn) {
+    langToggleBtn.addEventListener('click', () => {
+      sfx.pop();
+      applyLanguage(currentLang === 'ar' ? 'en' : 'ar', true);
+    });
+  }
+
+  applyLanguage(currentLang, false);
 });
 

@@ -11,19 +11,22 @@
 - **Core Specialization:** Full-Stack Web Development, Systems Architecture, Relational Databases, Computer Networks, and Cloud Infrastructure.
 
 ## Core Technical Skills
-- **Frontend:** React.js, Next.js, TypeScript, JavaScript (ES6+), Tailwind CSS, HTML5, Modern Responsive UI/UX.
-- **Backend & APIs:** Node.js, Express, Python, FastAPI, RESTful APIs, JWT Authentication, Microservices.
-- **Databases:** PostgreSQL, MySQL, Redis, Database Optimization & Schema Design.
-- **IT Infrastructure & DevOps:** Linux Administration, Bash Scripting, Docker Containerization, Computer Networks (TCP/IP, DNS, Firewalls), Git/GitHub CI/CD.
+- **Mobile & Desktop:** Flutter, Dart, Bloc / Cubit, Clean Architecture (DDD / MVVM), Microsoft Edge WebView2.
+- **Frontend Web:** React.js, Next.js, TypeScript, JavaScript (ES6+), Tailwind CSS, HTML5, Modern Responsive UI/UX.
+- **Backend & AI/RAG:** Python, FastAPI, Streamlit, Google Gemini LLM, FAISS Vector Search, BM25, Laravel 10 (PHP), Node.js, Express, RESTful APIs.
+- **Databases:** SQLite (WAL & Encrypted Migrations), PostgreSQL, MySQL, Firebase, Redis.
+- **IT Infrastructure & DevOps:** Windows Kernel/WinSDK Telemetry, Linux Administration, Bash Scripting, Docker Containerization, Computer Networks (TCP/IP, DNS, Firewalls), Git/GitHub CI/CD.
 
-## Key Projects
-1. **CampusIT Helpdesk & Asset Management System:** Enterprise IT infrastructure and ticket management platform for colleges and organizations. Built with Node.js, Express, PostgreSQL, and Docker.
-2. **CloudVault:** Zero-trust secure cloud storage and file sharing platform with client-side encryption. Built with Next.js, TypeScript, and AWS S3.
-3. **SmartClinic:** HIPAA-conscious patient records and doctor appointment hub with conflict prevention via Redis locks. Built with React, FastAPI, and PostgreSQL.
-4. **NetPulse:** Real-time network telemetry and packet diagnostics dashboard built with Python and WebSockets.
+## Key Projects (GitHub)
+1. **NetScope:** Real-time Windows internet speed monitor and per-application bandwidth tracker built with Flutter Desktop (WebView2), Python 3.11, WinSDK, FastAPI, and SQLite WAL. (https://github.com/ENG-Ebraheem/NetScope)
+2. **DocuLearn-AI:** Smart document learning and Hybrid RAG platform (FAISS + Arabic BM25 + Google Gemini) engineered with Clean Architecture / DDD and 276 passing tests. (https://github.com/ENG-Ebraheem/DocuLearn-AI)
+3. **Abu-Ali ERP:** Full-featured offline-first accounting, multi-organization ERP, and inventory management system built with Flutter, SQLite, and native Arabic RTL PDF reporting (136 tests). (https://github.com/ENG-Ebraheem/abu-ali-erp)
+4. **Hayy Community:** Neighborly mutual-aid and community solidarity mobile platform built with Flutter Bloc, Laravel 10 REST API, MySQL, and Firebase Authentication. (https://github.com/ENG-Ebraheem/hayy-community)
+5. **my-portfolio:** Personal Portfolio & Blogfolio inspired by Braydon Coyer's Bento Grid architecture. (https://github.com/ENG-Ebraheem/my-portfolio)
 
 ## Contact
-- **Email:** ebraheem.almoqbily@example.com / ibraheem770556950@gmail.com
+- **Email:** ibraheem770556950@gmail.com
 - **Website:** https://my-portfolios-khaki.vercel.app/
 - **GitHub:** https://github.com/ENG-Ebraheem
+- **LinkedIn:** https://www.linkedin.com/in/ibraheem-ahmed-389780392/
 

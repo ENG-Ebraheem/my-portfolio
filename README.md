@@ -37,13 +37,13 @@ Inspired by the design quality, Bento Grid layout, and interactive UX of **[Bray
    - Dynamic radial gradient glow following cursor coordinates on every card.
 
 4. **Featured Projects & Deep Dive Modals**
-   - Interactive category filtering tabs: *All Projects*, *Full-Stack Web*, *IT & Infrastructure*, *Systems & Python*.
-   - Project cards featuring simulated terminal/browser mockups.
+   - Interactive category filtering tabs: *All Projects*, *Flutter & Apps*, *Python & AI*, *Backend & Systems*.
+   - Project cards featuring simulated terminal/browser mockups and direct GitHub links.
    - Detailed modal popups containing problem statements, architectural solutions, and key technical specifications:
-     - **CampusIT Helpdesk & Asset Management System** (College capstone project).
-     - **CloudVault** (Zero-trust secure cloud storage & file sharing).
-     - **SmartClinic** (EHR medical records & appointment booking platform).
-     - **NetPulse** (Real-time network telemetry & diagnostic dashboard).
+     - **[NetScope](https://github.com/ENG-Ebraheem/NetScope):** Real-time Windows internet speed monitor & per-application bandwidth tracker (Flutter Desktop + Python + WinSDK + SQLite).
+     - **[DocuLearn-AI](https://github.com/ENG-Ebraheem/DocuLearn-AI):** Smart document learning & Hybrid RAG platform (Python + FAISS + BM25 + Google Gemini + DDD).
+     - **[Abu-Ali ERP](https://github.com/ENG-Ebraheem/abu-ali-erp):** Offline-first multi-organization accounting & inventory ERP system (Flutter + SQLite + Arabic PDF).
+     - **[Hayy Community](https://github.com/ENG-Ebraheem/hayy-community):** Neighborly mutual-aid mobile platform (Flutter Bloc + Laravel 10 API + MySQL + Firebase).
 
 5. **Developer Toolbox (Skills Matrix)**
    - Categorized into Frontend & UI, Backend & Data, and IT & Infrastructure.

@@ -223,8 +223,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const filter = btn.getAttribute('data-filter');
       projectCards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        if (filter === 'all' || category === filter) {
+        const categories = (card.getAttribute('data-category') || '').split(/\s+/);
+        if (filter === 'all' || categories.includes(filter)) {
           card.style.display = 'flex';
           card.style.animation = 'fadeIn 0.3s ease-out';
         } else {
@@ -238,72 +238,72 @@ document.addEventListener('DOMContentLoaded', () => {
   // 7. Project Details Modal Data & Handlers
   // --------------------------------------------------------------------------
   const projectDetails = {
-    'campus-it': {
-      title: 'CampusIT Helpdesk & Asset Management System',
-      category: 'IT & Infrastructure / Full-Stack',
-      tags: ['Node.js', 'Express', 'PostgreSQL', 'Docker', 'Tailwind CSS', 'JWT'],
-      summary: 'A centralized enterprise IT management platform built specifically for university colleges and academic institutions to manage IT assets, track hardware/software life cycles, automate support ticket assignments, and deliver real-time network infrastructure diagnostics.',
-      problem: 'College computer labs and departmental offices suffered from fragmented spreadsheets, delayed maintenance reports, and unmonitored server rooms, causing student lab downtime.',
-      solution: 'Engineered an end-to-end web system with role-based access control (Students, IT Staff, Lab Administrators), interactive lab workstation visual maps, automated ticket dispatching, and automated email/SMS status alerts.',
+    'netscope': {
+      title: 'NetScope - Real-Time Windows Network & Bandwidth Monitor',
+      category: 'Desktop Systems & Network Telemetry',
+      tags: ['Flutter Desktop', 'Python 3.11', 'WinSDK', 'FastAPI', 'SQLite WAL', 'WebView2'],
+      summary: 'A lightweight, GlassWire-inspired Windows desktop application that monitors live download/upload speeds, daily and monthly bandwidth quotas, and exact per-application consumption using real kernel metrics with zero simulation.',
+      problem: 'Built-in Windows network counters only report total adapter usage without attributing traffic per executable over flexible historical ranges, making it hard to identify hidden bandwidth drains.',
+      solution: 'Engineered a decoupled Python monitoring service (NetScopeService) combining psutil, Windows.Networking.Connectivity (WinSDK), and live TCP/UDP socket attribution into SQLite WAL storage, streamed over FastAPI & WebSockets to a bilingual Flutter WebView2 interface.',
       features: [
-        'Interactive Lab Topology & Workstation health monitoring',
-        'Ticket triage queue with priority-based SLA escalation',
-        'Hardware warranty & software license expiration tracker',
-        'PostgreSQL database optimized with indexed audit logs and relations',
-        'Docker containerized deployment with Nginx reverse proxy'
+        'Live download/upload speeds, Top 5 consuming apps, and 24-hour network activity charts',
+        'Per-application TCP/UDP socket inspection with Windows FileVersionInfo & 32x32 icon caching',
+        'Independent background service running in System Tray with optional native Windows Service registration',
+        'Configurable daily/monthly MB quota alerts and first-seen application alerts',
+        'Full English & Arabic (RTL/LTR) localization with Dark, Light, and System themes'
       ],
-      github: 'https://github.com/ENG-Ebraheem/campus-it-system',
+      github: 'https://github.com/ENG-Ebraheem/NetScope',
       demo: '#'
     },
-    'cloudvault': {
-      title: 'CloudVault - Secure Cloud Storage & File Sharing',
-      category: 'Full-Stack Web & Cloud',
-      tags: ['Next.js', 'TypeScript', 'Node.js', 'AWS S3 / MinIO', 'Prisma', 'Tailwind'],
-      summary: 'A zero-trust personal and collaborative cloud storage service inspired by Dropbox and Google Drive, designed with end-to-end client-side encryption and high-throughput chunked file uploads.',
-      problem: 'Existing file sharing tools often lack transparent security controls, upload resumption over unstable networks, or lightweight self-hosting options for organizations.',
-      solution: 'Built an ultra-responsive web application supporting drag-and-drop file chunking, AES-256 encrypted storage, time-expiring shareable download links, and granular folder permissions.',
+    'doculearn-ai': {
+      title: 'DocuLearn-AI - Smart Document Learning & Hybrid RAG Platform',
+      category: 'AI & Hybrid RAG Systems (Clean Architecture / DDD)',
+      tags: ['Python 3.10+', 'Streamlit', 'FAISS', 'Google Gemini', 'BM25', 'SQLite', 'Docker'],
+      summary: 'An AI-powered educational document learning platform engineered with Clean Architecture and Domain-Driven Design (DDD) that transforms PDF, Word, Excel, and TXT materials into an active personalized study hub.',
+      problem: 'Students reviewing dense Arabic and English course documents struggle with passive static files and generic AI chatbots that hallucinate answers instead of citing verified lecture pages.',
+      solution: 'Developed a Hybrid RAG pipeline fusing SentenceTransformers + FAISS semantic retrieval with Arabic-normalized BM25 lexical search via Reciprocal Rank Fusion (RRF), backed by context-sufficiency checks and page citations.',
       features: [
-        'Resumable multi-part upload engine handling files up to 10GB',
-        'Expiring password-protected share links with view-count limits',
-        'Live file preview for PDFs, code files, audio, and media',
-        'Detailed access logging and IP audit trail',
-        'Full keyboard navigation and accessible UI'
+        'Multi-format ingestion (PDF, DOCX, XLSX, TXT) with custom Arabic normalization & OCR health detection',
+        'Hybrid RAG engine combining FAISS dense vectors, Arabic-optimized BM25, and RRF score fusion',
+        'Hallucination-resistant Q&A strictly grounded in course sources with exact document & page citations',
+        'AI Learning Engine generating multi-level summaries, key concepts, quizzes, and spaced-repetition flashcards',
+        'Backed by 276 passing unit & integration tests with strict course and document isolation'
       ],
-      github: 'https://github.com/ENG-Ebraheem/cloudvault',
+      github: 'https://github.com/ENG-Ebraheem/DocuLearn-AI',
       demo: '#'
     },
-    'smartclinic': {
-      title: 'SmartClinic - Medical Records & Appointment Hub',
-      category: 'Full-Stack Web / Database Systems',
-      tags: ['React', 'Python', 'FastAPI', 'PostgreSQL', 'Redis', 'Docker'],
-      summary: 'A secure, HIPAA-compliant patient health records and online doctor scheduling platform engineered for clinics and hospitals to streamline patient intake and doctor agendas.',
-      problem: 'Physical paperwork and double-booked doctor appointments created long clinic waiting times and lost medical test records.',
-      solution: 'Developed an asynchronous FastAPI microservice backend connected to a React frontend, featuring instant slot conflict resolution via Redis locks, and electronic health record (EHR) PDF generation.',
+    'abu-ali-erp': {
+      title: 'Abu-Ali ERP - Offline-First Accounting & Inventory System',
+      category: 'Mobile Engineering & Enterprise ERP',
+      tags: ['Flutter 3.24+', 'Dart 3.5+', 'SQLite (sqflite)', 'Clean Architecture', 'Arabic RTL PDF'],
+      summary: 'A full-featured, offline-first accounting and inventory management ERP solution built with Flutter for small and medium enterprises, supporting multi-organization data isolation and financial statements.',
+      problem: 'Businesses in regions with unstable internet need complete multi-tenant accounting, inventory costing, and Arabic RTL PDF invoicing without depending on constant cloud connectivity.',
+      solution: 'Built a layered Clean Architecture Flutter application backed by an encrypted local SQLite database with schema migrations (V1 -> V4), automated double-entry balance checks, and a NotoNaskhArabic PDF generator.',
       features: [
-        'Real-time doctor calendar booking with instant conflict prevention',
-        'Secure patient portal with lab results and prescription history',
-        'Doctor dashboard with digital prescription signer',
-        'Role-based permissions for Doctors, Nurses, and Receptionists',
-        'Automated appointment reminder notifications'
+        'Multi-organization tenancy with independent logos and complete financial data isolation',
+        '4-level hierarchical Chart of Accounts, double-entry journals, and cash/bank vouchers',
+        'Sales & purchase invoicing, multi-warehouse stock movements, and weighted-average inventory costing',
+        'Trial Balance, General Ledger, Income Statement, Balance Sheet, and native Arabic PDF exports',
+        'App lock, security recovery codes, encrypted database backup/restore, and 136 passing automated tests'
       ],
-      github: 'https://github.com/ENG-Ebraheem/smartclinic',
+      github: 'https://github.com/ENG-Ebraheem/abu-ali-erp',
       demo: '#'
     },
-    'netpulse': {
-      title: 'NetPulse - Real-time Network Monitoring & Diagnostics',
-      category: 'IT & Networking / Systems',
-      tags: ['Python', 'Scapy', 'WebSockets', 'Chart.js', 'Bash', 'Linux'],
-      summary: 'A lightweight network inspection daemon and web dashboard providing live ping latency monitoring, ICMP/TCP packet analysis, port scanning, and instant bandwidth anomaly alerts.',
-      problem: 'Commercial network monitoring suites like SolarWinds or PRTG are heavyweight, costly, and complex for small enterprise networks or college lab clusters.',
-      solution: 'Engineered a modular Python service that polls lab gateways and servers, analyzes round-trip time (RTT), detects rogue MAC addresses, and streams live telemetry to a browser dashboard via WebSockets.',
+    'hayy-community': {
+      title: 'Hayy Community - Neighborly Mutual-Aid Platform',
+      category: 'Full-Stack Mobile & REST API',
+      tags: ['Flutter', 'Dart', 'Bloc / Cubit', 'Laravel 10 (PHP)', 'MySQL', 'Firebase Auth'],
+      summary: 'A community solidarity mobile application (تطبيق حَيّ) designed to strengthen cooperation among local neighbors by matching everyday assistance requests with community volunteers.',
+      problem: 'Local neighborhood members lack a structured, accountable platform to coordinate mutual-aid tasks such as deliveries, moving assistance, tutoring, or tool lending.',
+      solution: 'Developed a Clean Architecture / MVVM Flutter client powered by Bloc/Cubit state management connected via Dio to a Laravel 10 + MySQL RESTful API with Firebase ID Token JWT verification middleware.',
       features: [
-        'Live latency heatmaps and packet jitter graphs',
-        'Automated port scanner with known vulnerability flag checks',
-        'Subnet IP discovery and host availability alerts',
-        'Configurable Telegram/Email alert thresholds for service downtime',
-        'Runs as an ultra-lightweight systemd daemon on Linux/Raspberry Pi'
+        'Publish categorized help requests and browse open neighborhood tasks with location details',
+        'Structured task lifecycle (Open -> In Progress -> Completed -> Rated) with volunteer approval',
+        'Mutual rating and review system alongside detailed user service statistics',
+        'Secure Firebase Authentication verified server-side via Laravel FirebaseAuthMiddleware',
+        'Clean Architecture modular frontend (Data, Domain, Presentation) with Bloc/Cubit state management'
       ],
-      github: 'https://github.com/ENG-Ebraheem/netpulse-monitor',
+      github: 'https://github.com/ENG-Ebraheem/hayy-community',
       demo: '#'
     }
   };

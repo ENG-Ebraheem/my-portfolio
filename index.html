@@ -9,7 +9,7 @@
 
   <meta name="description"
     content="Personal portfolio and blogfolio of Ebraheem Al-moqbily (إبراهيم المقبلي), a 4th-year Information Technology (IT) student and software developer specializing in modern web applications, cloud infrastructure, and robust systems.">
-  <meta name="keywords" content="Ebraheem Al-moqbily, إبراهيم المقبلي, ENG-Ebraheem, Information Technology, IT Engineer, Software Developer, Full-Stack Developer, React, Node.js, Python, Yemen Developer">
+  <meta name="keywords" content="Ebraheem Al-moqbily, إبراهيم المقبلي, ENG-Ebraheem, Information Technology, IT Engineer, Software Developer, Full-Stack Developer, Flutter, Dart, Python, Laravel, AI RAG, NetScope, DocuLearn-AI, Abu-Ali ERP, Yemen Developer">
   <meta name="author" content="Ebraheem Al-moqbily">
   <link rel="canonical" href="https://my-portfolios-khaki.vercel.app/">
 
@@ -40,22 +40,22 @@
         "url": "https://my-portfolios-khaki.vercel.app/",
         "image": "https://my-portfolios-khaki.vercel.app/assets/images/ebraheem.jpg",
         "jobTitle": "Software Developer & Information Technology Specialist",
-        "description": "Senior 4th-level Information Technology student specializing in Full-Stack Web Development, Cloud Infrastructure, Database Design, and Computer Networks.",
+        "description": "Senior 4th-level Information Technology student specializing in Flutter Cross-Platform Apps, Python & AI/RAG Systems, Full-Stack Web/API Development, and Network Telemetry.",
         "sameAs": [
           "https://github.com/ENG-Ebraheem",
           "https://www.linkedin.com/in/ibraheem-ahmed-389780392/"
         ],
         "knowsAbout": [
           "Information Technology",
-          "Web Development",
-          "React.js",
-          "Next.js",
-          "Node.js",
+          "Flutter & Dart",
           "Python",
-          "PostgreSQL",
-          "Docker",
-          "Linux",
-          "Computer Networks"
+          "Hybrid RAG & AI Systems",
+          "Laravel & PHP",
+          "React.js & Next.js",
+          "Node.js",
+          "PostgreSQL, MySQL & SQLite",
+          "Docker & Linux",
+          "Windows Network Telemetry"
         ]
       },
       {
@@ -390,14 +390,14 @@
       <!-- Category Filter Tabs -->
       <div class="project-filter-bar">
         <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="fullstack">Full-Stack Web</button>
-        <button class="filter-btn" data-filter="it-infra">IT & Infrastructure</button>
-        <button class="filter-btn" data-filter="systems">Systems & Python</button>
+        <button class="filter-btn" data-filter="flutter">Flutter & Apps</button>
+        <button class="filter-btn" data-filter="python">Python & AI</button>
+        <button class="filter-btn" data-filter="systems">Backend & Systems</button>
       </div>
 
       <div class="projects-grid">
-        <!-- Project 1: CampusIT Helpdesk & Asset Management -->
-        <div class="project-card" data-category="it-infra">
+        <!-- Project 1: NetScope Windows Bandwidth & Speed Monitor -->
+        <div class="project-card" data-category="flutter python systems">
           <div class="project-banner">
             <div class="project-preview-mockup">
               <div class="mockup-header">
@@ -406,10 +406,10 @@
                 <span class="mockup-dot green"></span>
               </div>
               <div class="mockup-body">
-                <span class="mockup-badge">CAMPUS_IT_CORE // v2.4</span>
-                <div style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-top: 0.35rem;">Asset & Support
-                  Management</div>
-                <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 0.2rem;">PostgreSQL • Node.js • Dockerized
+                <span class="mockup-badge">NETSCOPE // KERNEL_TELEMETRY</span>
+                <div style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-top: 0.35rem;">Windows Bandwidth
+                  Monitor</div>
+                <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 0.2rem;">Flutter Desktop • Python • WinSDK
                 </div>
               </div>
             </div>
@@ -417,142 +417,31 @@
           <div class="project-content">
             <div>
               <div class="project-meta-top">
-                <span class="project-category">IT Infrastructure & Management</span>
-                <span class="badge-pill">Capstone Project</span>
+                <span class="project-category">Systems & Network Telemetry</span>
+                <span class="badge-pill">Windows App</span>
               </div>
-              <h3 class="project-title">CampusIT Helpdesk & Asset System</h3>
+              <h3 class="project-title">NetScope - Speed & Bandwidth Tracker</h3>
               <p class="project-description">
-                A centralized IT service portal designed for academic institutions. Features lab workstation topology
-                health tracking, automated ticket assignment with SLA alerts, and hardware warranty audits.
+                A real-time Windows internet speed monitor and per-application bandwidth tracker powered by native
+                WinSDK telemetry, live TCP/UDP socket attribution, and SQLite WAL storage.
               </p>
               <div class="project-tech-tags">
-                <span class="tech-pill">Node.js</span>
-                <span class="tech-pill">Express</span>
-                <span class="tech-pill">PostgreSQL</span>
-                <span class="tech-pill">Docker</span>
-                <span class="tech-pill">JWT</span>
-              </div>
-            </div>
-            <div class="project-links">
-              <button class="btn-primary open-project-btn" data-project="campus-it">
-                <span>View Details</span>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </button>
-              <a href="https://github.com/ENG-Ebraheem" target="_blank" rel="noopener noreferrer" class="link-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path
-                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                  </path>
-                </svg>
-                <span>Code</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 2: CloudVault Platform -->
-        <div class="project-card" data-category="fullstack">
-          <div class="project-banner">
-            <div class="project-preview-mockup">
-              <div class="mockup-header">
-                <span class="mockup-dot red"></span>
-                <span class="mockup-dot yellow"></span>
-                <span class="mockup-dot green"></span>
-              </div>
-              <div class="mockup-body">
-                <span class="mockup-badge">CLOUD_VAULT // ZERO_TRUST</span>
-                <div style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-top: 0.35rem;">Secure Cloud Storage
-                </div>
-                <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 0.2rem;">Next.js • TypeScript • S3 Cloud
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <div>
-              <div class="project-meta-top">
-                <span class="project-category">Cloud & Full-Stack</span>
-                <span class="badge-pill">Production</span>
-              </div>
-              <h3 class="project-title">CloudVault - Secure File Storage</h3>
-              <p class="project-description">
-                A high-performance cloud drive application with client-side encryption, chunked upload engine for files
-                up to 10GB, and expiring password-protected download links.
-              </p>
-              <div class="project-tech-tags">
-                <span class="tech-pill">Next.js</span>
-                <span class="tech-pill">TypeScript</span>
-                <span class="tech-pill">AWS S3</span>
-                <span class="tech-pill">Prisma</span>
-                <span class="tech-pill">Tailwind CSS</span>
-              </div>
-            </div>
-            <div class="project-links">
-              <button class="btn-primary open-project-btn" data-project="cloudvault">
-                <span>View Details</span>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </button>
-              <a href="https://github.com/ENG-Ebraheem" target="_blank" rel="noopener noreferrer" class="link-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path
-                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                  </path>
-                </svg>
-                <span>Code</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3: SmartClinic Medical Records Portal -->
-        <div class="project-card" data-category="fullstack">
-          <div class="project-banner">
-            <div class="project-preview-mockup">
-              <div class="mockup-header">
-                <span class="mockup-dot red"></span>
-                <span class="mockup-dot yellow"></span>
-                <span class="mockup-dot green"></span>
-              </div>
-              <div class="mockup-body">
-                <span class="mockup-badge">SMART_CLINIC // EHR</span>
-                <div style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-top: 0.35rem;">Health Records &
-                  Bookings</div>
-                <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 0.2rem;">React • FastAPI • Redis •
-                  PostgreSQL</div>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <div>
-              <div class="project-meta-top">
-                <span class="project-category">Full-Stack & Database</span>
-                <span class="badge-pill">Enterprise</span>
-              </div>
-              <h3 class="project-title">SmartClinic - Medical Records Hub</h3>
-              <p class="project-description">
-                A HIPAA-conscious patient appointment scheduler and electronic health records portal featuring
-                zero-conflict booking with Redis distributed locks and digital prescription generators.
-              </p>
-              <div class="project-tech-tags">
-                <span class="tech-pill">React</span>
+                <span class="tech-pill">Flutter</span>
+                <span class="tech-pill">Python 3.11</span>
+                <span class="tech-pill">WinSDK</span>
                 <span class="tech-pill">FastAPI</span>
-                <span class="tech-pill">PostgreSQL</span>
-                <span class="tech-pill">Redis</span>
-                <span class="tech-pill">Docker</span>
+                <span class="tech-pill">SQLite</span>
               </div>
             </div>
             <div class="project-links">
-              <button class="btn-primary open-project-btn" data-project="smartclinic">
+              <button class="btn-primary open-project-btn" data-project="netscope">
                 <span>View Details</span>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
               </button>
-              <a href="https://github.com/ENG-Ebraheem" target="_blank" rel="noopener noreferrer" class="link-btn">
+              <a href="https://github.com/ENG-Ebraheem/NetScope" target="_blank" rel="noopener noreferrer"
+                class="link-btn">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path
                     d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
@@ -564,8 +453,8 @@
           </div>
         </div>
 
-        <!-- Project 4: NetPulse Network Monitor -->
-        <div class="project-card" data-category="systems">
+        <!-- Project 2: DocuLearn-AI Hybrid RAG Platform -->
+        <div class="project-card" data-category="python">
           <div class="project-banner">
             <div class="project-preview-mockup">
               <div class="mockup-header">
@@ -574,41 +463,157 @@
                 <span class="mockup-dot green"></span>
               </div>
               <div class="mockup-body">
-                <span class="mockup-badge">NET_PULSE // TELEMETRY</span>
-                <div style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-top: 0.35rem;">Real-Time Network
-                  Diagnostics</div>
-                <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 0.2rem;">Python • WebSockets • Packet
-                  Sniffer</div>
+                <span class="mockup-badge">DOCULEARN_AI // HYBRID_RAG</span>
+                <div style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-top: 0.35rem;">Smart Document
+                  Learning
+                </div>
+                <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 0.2rem;">Python • FAISS • Google Gemini
+                </div>
               </div>
             </div>
           </div>
           <div class="project-content">
             <div>
               <div class="project-meta-top">
-                <span class="project-category">Networking & Python</span>
-                <span class="badge-pill">Open Source</span>
+                <span class="project-category">AI & Hybrid RAG Systems</span>
+                <span class="badge-pill">276 Tests Passed</span>
               </div>
-              <h3 class="project-title">NetPulse - Diagnostic Dashboard</h3>
+              <h3 class="project-title">DocuLearn-AI - Intelligent Study Hub</h3>
               <p class="project-description">
-                A lightweight network monitoring daemon that tracks latency, ICMP jitter, active socket connections, and
-                abnormal packet spikes, broadcasting live alerts to a browser dashboard.
+                An AI-powered educational document platform built with Clean Architecture & DDD. Combines FAISS semantic
+                search with Arabic BM25 retrieval for grounded Q&A, quizzes, and flashcards.
               </p>
               <div class="project-tech-tags">
                 <span class="tech-pill">Python</span>
-                <span class="tech-pill">WebSockets</span>
-                <span class="tech-pill">Linux</span>
-                <span class="tech-pill">Chart.js</span>
-                <span class="tech-pill">Bash</span>
+                <span class="tech-pill">Streamlit</span>
+                <span class="tech-pill">FAISS</span>
+                <span class="tech-pill">Google Gemini</span>
+                <span class="tech-pill">Docker</span>
               </div>
             </div>
             <div class="project-links">
-              <button class="btn-primary open-project-btn" data-project="netpulse">
+              <button class="btn-primary open-project-btn" data-project="doculearn-ai">
                 <span>View Details</span>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
               </button>
-              <a href="https://github.com/ENG-Ebraheem" target="_blank" rel="noopener noreferrer" class="link-btn">
+              <a href="https://github.com/ENG-Ebraheem/DocuLearn-AI" target="_blank" rel="noopener noreferrer"
+                class="link-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                  </path>
+                </svg>
+                <span>Code</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Abu-Ali ERP Accounting & Inventory System -->
+        <div class="project-card" data-category="flutter systems">
+          <div class="project-banner">
+            <div class="project-preview-mockup">
+              <div class="mockup-header">
+                <span class="mockup-dot red"></span>
+                <span class="mockup-dot yellow"></span>
+                <span class="mockup-dot green"></span>
+              </div>
+              <div class="mockup-body">
+                <span class="mockup-badge">ABU_ALI_ERP // OFFLINE_FIRST</span>
+                <div style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-top: 0.35rem;">Accounting &
+                  Inventory ERP</div>
+                <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 0.2rem;">Flutter • Dart • SQLite • Arabic
+                  PDF</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div>
+              <div class="project-meta-top">
+                <span class="project-category">Mobile & Enterprise ERP</span>
+                <span class="badge-pill">136 Tests Passed</span>
+              </div>
+              <h3 class="project-title">Abu-Ali ERP - Accounting & Inventory</h3>
+              <p class="project-description">
+                A full-featured, offline-first accounting and warehouse management system built with Flutter. Supports
+                multi-organization isolation, double-entry ledgers, and native Arabic RTL PDF reports.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-pill">Flutter</span>
+                <span class="tech-pill">Dart</span>
+                <span class="tech-pill">SQLite</span>
+                <span class="tech-pill">Clean Arch</span>
+                <span class="tech-pill">Arabic PDF</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <button class="btn-primary open-project-btn" data-project="abu-ali-erp">
+                <span>View Details</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+              <a href="https://github.com/ENG-Ebraheem/abu-ali-erp" target="_blank" rel="noopener noreferrer"
+                class="link-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                  </path>
+                </svg>
+                <span>Code</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Hayy Community Platform -->
+        <div class="project-card" data-category="flutter systems">
+          <div class="project-banner">
+            <div class="project-preview-mockup">
+              <div class="mockup-header">
+                <span class="mockup-dot red"></span>
+                <span class="mockup-dot yellow"></span>
+                <span class="mockup-dot green"></span>
+              </div>
+              <div class="mockup-body">
+                <span class="mockup-badge">HAYY_APP // MUTUAL_AID</span>
+                <div style="font-size: 1.1rem; font-weight: 700; color: #fff; margin-top: 0.35rem;">Neighborhood
+                  Solidarity App</div>
+                <div style="font-size: 0.78rem; color: #94a3b8; margin-top: 0.2rem;">Flutter • Bloc • Laravel 10 •
+                  MySQL</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div>
+              <div class="project-meta-top">
+                <span class="project-category">Full-Stack Mobile & API</span>
+                <span class="badge-pill">Full-Stack</span>
+              </div>
+              <h3 class="project-title">Hayy - Community Mutual-Aid Platform</h3>
+              <p class="project-description">
+                A neighborly mutual-aid mobile platform connecting local residents for volunteering and assistance.
+                Powered by Flutter Bloc Clean Architecture and a Laravel 10 + MySQL REST API.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-pill">Flutter</span>
+                <span class="tech-pill">Bloc / Cubit</span>
+                <span class="tech-pill">Laravel 10</span>
+                <span class="tech-pill">MySQL</span>
+                <span class="tech-pill">Firebase</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <button class="btn-primary open-project-btn" data-project="hayy-community">
+                <span>View Details</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+              <a href="https://github.com/ENG-Ebraheem/hayy-community" target="_blank" rel="noopener noreferrer"
+                class="link-btn">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path
                     d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
@@ -856,14 +861,14 @@
           </div>
 
           <div class="timeline-list">
-            <!-- Capstone & Lab Assistant -->
+            <!-- Capstone & Engineering Systems -->
             <div class="timeline-item">
               <span class="timeline-period">2024 — PRESENT</span>
-              <h4 class="timeline-role">Lead Developer & Capstone Engineer</h4>
-              <p class="timeline-org">Senior Graduation Project</p>
+              <h4 class="timeline-role">Lead Developer & Software Architect</h4>
+              <p class="timeline-org">University & Production Systems</p>
               <p class="timeline-desc">
-                Architecting the CampusIT platform: engineered database schema migrations, implemented secure JWT token
-                authentication, containerized services using Docker Compose, and configured Nginx load balancing.
+                Architected DocuLearn-AI (Hybrid RAG platform with 276 passing tests), NetScope (Windows network
+                telemetry), and Hayy Community (Flutter & Laravel 10 API) using Clean Architecture and DDD principles.
               </p>
             </div>
 

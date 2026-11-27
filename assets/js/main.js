@@ -5,9 +5,42 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // --------------------------------------------------------------------------
-  // 0. Language State & Bilingual Helpers (EN / AR)
+  // 0. Non-Blocking Fonts & Lazy Bilingual Loader (EN / AR)
   // --------------------------------------------------------------------------
-  const i18nData = (window.PORTFOLIO_I18N && window.PORTFOLIO_I18N.ar) || null;
+  function loadStylesheetOnce(id, href) {
+    if (document.getElementById(id)) return;
+    const link = document.createElement('link');
+    link.id = id;
+    link.rel = 'stylesheet';
+    link.href = href;
+    document.head.appendChild(link);
+  }
+
+  // Load English UI fonts asynchronously after initial render (zero FCP/LCP block)
+  loadStylesheetOnce(
+    'gf-geist',
+    'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap'
+  );
+
+  let i18nData = (window.PORTFOLIO_I18N && window.PORTFOLIO_I18N.ar) || null;
+  let i18nPromise = null;
+
+  function ensureI18nLoaded() {
+    if (i18nData) return Promise.resolve(i18nData);
+    if (i18nPromise) return i18nPromise;
+    i18nPromise = new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = 'assets/js/i18n.js?v=2';
+      script.onload = () => {
+        i18nData = (window.PORTFOLIO_I18N && window.PORTFOLIO_I18N.ar) || null;
+        resolve(i18nData);
+      };
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+    return i18nPromise;
+  }
+
   let currentLang = localStorage.getItem('portfolio_lang') === 'ar' ? 'ar' : 'en';
   let statsCounted = false;
 
@@ -806,7 +839,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const langToggleBtn = document.getElementById('lang-toggle-btn');
   const langToggleLabel = document.getElementById('lang-toggle-label');
 
-  function applyLanguage(lang, announce = false) {
+  async function applyLanguage(lang, announce = false) {
+    if (lang === 'ar') {
+      loadStylesheetOnce(
+        'gf-arabic',
+        'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap'
+      );
+      try {
+        await ensureI18nLoaded();
+      } catch (e) {
+        currentLang = 'en';
+        return;
+      }
+    }
+
     currentLang = lang === 'ar' && i18nData ? 'ar' : 'en';
     localStorage.setItem('portfolio_lang', currentLang);
     document.documentElement.setAttribute('lang', currentLang);
@@ -884,6 +930,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  applyLanguage(currentLang, false);
+  if (currentLang === 'ar') {
+    applyLanguage('ar', false);
+  }
 });
 

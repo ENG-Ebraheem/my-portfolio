@@ -94,16 +94,19 @@
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%236366f1'/><text x='50%' y='55%' text-anchor='middle' fill='white' font-family='sans-serif' font-size='42' font-weight='bold' dy='.3em'>EA</text></svg>">
 
-  <!-- Fonts: Geist / Inter / IBM Plex Sans Arabic -->
+  <!-- Fonts: Geist / Inter / IBM Plex Sans Arabic (non-render-blocking) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="AI & LLM Profile Summary">
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap"
+      rel="stylesheet">
+  </noscript>
   <link rel="preload" as="image" href="assets/images/ebraheem.jpg" fetchpriority="high">
 
   <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=4">
+  <link rel="stylesheet" href="assets/css/style.css?v=5">
 </head>
 
 <body>
@@ -1120,12 +1123,12 @@
           <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
           <div class="form-group">
             <label for="name" class="form-label" data-i18n="contact.lblName">Your Name</label>
-            <input type="text" id="name" name="name" class="form-input" data-i18n-placeholder="name"
+            <input type="text" id="name" name="name" class="form-input" autocomplete="name" data-i18n-placeholder="name"
               placeholder="What's your name?" required>
           </div>
           <div class="form-group">
             <label for="email" class="form-label" data-i18n="contact.lblEmail">Your Email</label>
-            <input type="email" id="email" name="email" class="form-input" data-i18n-placeholder="email"
+            <input type="email" id="email" name="email" class="form-input" autocomplete="email" data-i18n-placeholder="email"
               placeholder="name@example.com" required>
           </div>
           <div class="form-group">
@@ -1227,8 +1230,8 @@
           The Problem</h4>
         <p id="modal-problem" style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.55;"></p>
 
-        <h4 data-i18n="modal.solution"
-          style="font-size: 0.9rem; font-weight: 700; color: #10b981; text-transform: uppercase; margin-top: 0.85rem; margin-bottom: 0.4rem;">
+        <h4 data-i18n="modal.solution" class="modal-solution-heading"
+          style="font-size: 0.9rem; font-weight: 700; text-transform: uppercase; margin-top: 0.85rem; margin-bottom: 0.4rem;">
           The Solution</h4>
         <p id="modal-solution" style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.55;"></p>
       </div>
@@ -1282,8 +1285,7 @@
   <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
 
   <!-- Core Scripts -->
-  <script defer src="assets/js/i18n.js?v=2"></script>
-  <script defer src="assets/js/main.js?v=5"></script>
+  <script defer src="assets/js/main.js?v=6"></script>
 </body>
 
 </html>
